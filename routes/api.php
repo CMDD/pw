@@ -16,3 +16,15 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// RUTAS CATEGORIAS
+Route::get('categorias/{id}','CategoriaController@index');
+Route::post('cambiar-estado-categoria','CategoriaController@cambiarEstadoCategoria');
+Route::post('crear/categoria','CategoriaController@store');
+
+// FIN RUTAS CATEGORIAS
+
+Route::get('contenidos/{id}','ContenidoController@index');
+Route::post('cambiar-estado-contenido','ContenidoController@cambiarEstadoContenido');
+
+

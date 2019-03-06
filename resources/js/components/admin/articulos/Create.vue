@@ -46,27 +46,26 @@
 
                   <div class="form-group">
                     <label>Categoria</label>
-                    <select class="form-control"  v-model="categoria" >
+                    <select class="form-control" >
                       <option  value="">Seleccione...</option>
-                      <option value="1" >Eventos</option>
-                      <option value="2" >Librerias</option>
-                      <option value="3" >Donaciones</option>
-                      <option value="4" >Señal en vivo</option>
+                      <option v-for="categoria in categorias"  :key="categoria.id" v-if="categoria.estado" >
+                        {{categoria.nombre}}</option>
+                      
                     </select>
                   </div>
                   <div class="form-group">
                     <label>Tag</label>
-                    <select class="form-control"  v-model="categoria" >
+                    <select class="form-control"  >
                       <option  value="">Seleccione...</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label>Imagen principal</label>
-                    <input type="file" id="file" ref="file" required  @change="imgPrincipal" value="">
+                    <input type="file" id="file" ref="file" required  value="">
                   </div>
                   <div class="form-group">
                     <label>Otras imagenes</label>
-                    <input type="file" id="files" ref="files"  multiple @change="onFileSelected" value="">
+                    <input type="file" id="files" ref="files"  multiple  value="">
                   </div>
                 </div>
                 <!-- /.box-body -->
@@ -88,11 +87,19 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data(){
     return{
-
+      categorias:[],
+      enviando:false
+      
     }
+  },
+  created(){
+    axios.get('/api/categorias/'+ 1).then(res=>{
+       this.categorias = res.data; 
+     });
   }
 }
 </script>

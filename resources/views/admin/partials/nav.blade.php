@@ -25,7 +25,7 @@
     </a>
     <ul class="treeview-menu">
       <li>
-        <router-link to="/admin/configuracion"><i class="fa fa-pencil" ></i> Pagina principal</router-link>
+        <router-link to="/administrador/configuracion"><i class="fa fa-pencil" ></i> Pagina principal</router-link>
       </li>
     </ul>
   </li>

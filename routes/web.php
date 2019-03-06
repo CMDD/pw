@@ -2,9 +2,7 @@
 
 
 
-Route::get('/',function(){
-  return view('index');
-});
+Route::get('/{param?}','HomeController@index');
 
 
 Route::get('administrador', function () {return view('admin.index');});

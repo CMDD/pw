@@ -15,6 +15,8 @@ class CreateEmisorasTable extends Migration
     {
         Schema::create('emisoras', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

@@ -20,20 +20,20 @@
                 </button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item mx-2 active">
-                            <a class="nav-link" href="#">Bogotá</a>
+                        <li class="nav-item mx-2   {{request()->is('/') ? 'active':''}}">
+                          <a href="/" class="nav-link">Bogotá</a>
                         </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#">Medellín</a>
+                        <li class="nav-item mx-2 {{request()->is('medellin') ? 'active':''}}">
+                          <a href="/medellin" class="nav-link">Medellín</a>
                         </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#">Cartagena</a>
+                        <li class="nav-item mx-2 {{request()->is('cartagena') ? 'active':''}}">
+                            <a class="nav-link" href="/cartagena">Cartagena</a>
                         </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#">Barranquilla</a>
+                        <li class="nav-item mx-2 {{request()->is('barranquilla') ? 'active':''}}">
+                            <a class="nav-link" href="/barranquilla">Barranquilla</a>
                         </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#">Ibagué</a>
+                        <li class="nav-item mx-2 {{request()->is('ibague') ? 'active':''}}">
+                            <a class="nav-link" href="/ibague">Ibagué</a>
                         </li>
                     </ul>
                     <div class="d-inline-block my-2 my-lg-0">
@@ -45,10 +45,75 @@
                 </div>
             </nav>
         </div>
+        <div class="slide-home">
+            <div style="background-image: url(img/slide-example.jpg);">
+                <div class="content">
+                    <img src="img/elmanestavivo.svg">
+                    <a href="#" class="button">¡Suscríbete aquí!</a>
+                </div>
+            </div>
+            <div style="background-image: url(img/slide-example.jpg);">
+                <div class="content">
+                    <img src="img/elmanestavivo.svg">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row has-border-white">
+                <div class="container">
+                    <seccion1></seccion1>
+                </div>
+            </div>
 
-        <router-view></reuter-view>
+            <noticias></noticias>
+            <div class="row has-border-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 py-3 px-xl-5">
+                            <div class="banner-blue">
+                                <img src="img/banner-example.jpg">
+                                <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 py-3 px-xl-5">
+                            <div class="banner-blue">
+                                <img src="img/banner-example.jpg">
+                                <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 py-3 px-xl-5">
+                            <div class="banner-blue">
+                                <img src="img/banner-example.jpg">
+                                <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row bg-yellow">
+                <div class="container">
+                    <h2 class="subtitle">Redes sociales</h2>
+                    <div class="row">
+                        <div class="col-md-4 py-3 px-xl-5">
+                            <div style="height: 400px; background: #fff;">
+                            </div>
+                        </div>
+                        <div class="col-md-4 py-3 px-xl-5">
+                            <div style="height: 400px; background: #fff;">
+                            </div>
+                        </div>
+                        <div class="col-md-4 py-3 px-xl-5">
+                            <div style="height: 400px; background: #fff;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer-component></footer-component>
+</div>
 
-        
+
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>

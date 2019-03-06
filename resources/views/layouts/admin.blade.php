@@ -198,7 +198,7 @@
 <!-- AdminLTE App -->
 <script src="/admin/js/adminlte.min.js"></script>
 
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

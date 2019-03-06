@@ -3,13 +3,11 @@
 <!-- Content Header (Page header) -->
   <section class="content-header">
   <h1>
-    Configuracion
-    <small>Crear</small>
+    Configuracion web
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li >Articulos</li>
-    <li class="active">Crear</li>
+    <li class="active">Configuración</li>
   </ol>
   </section>
 <!-- Main content -->
@@ -32,13 +30,13 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="item active">
-                  <img src="img/slide-example.jpg" alt="First slide">
+                  <img src="/img/slide-example.jpg" alt="First slide">
                   </div>
                   <div class="item">
-                  <img src="img/slide-example.jpg" alt="Second slide">
+                  <img src="/img/slide-example.jpg" alt="Second slide">
                   </div>
                   <div class="item">
-                  <img src="img/slide-example.jpg" alt="Third slide">
+                  <img src="/img/slide-example.jpg" alt="Third slide">
                   </div>
                 </div>
                 <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -67,10 +65,10 @@
                 <h3 class="timeline-header"><a href="#">Imagenes</a> Slider</h3>
 
                 <div class="timeline-body">
-                  <img style="width:25%" src="img/slide-example.jpg" alt="..." class="margin">
-                  <img style="width:25%" src="img/slide-example.jpg" alt="..." class="margin">
-                  <img style="width:25%" src="img/slide-example.jpg" alt="..." class="margin">
-                  <img style="width:25%" src="img/slide-example.jpg" alt="..." class="margin">
+                  <img style="width:25%" src="/img/slide-example.jpg" alt="..." class="margin">
+                  <img style="width:25%" src="/img/slide-example.jpg" alt="..." class="margin">
+                  <img style="width:25%" src="/img/slide-example.jpg" alt="..." class="margin">
+                  <img style="width:25%" src="/img/slide-example.jpg" alt="..." class="margin">
                 </div>
               </div>
             </div>
@@ -83,10 +81,10 @@
       </div>
 
     </div>
+    <admin-contenido></admin-contenido>
   </div>
 </section>
 </div>
-
 </template>
 
 <script>
@@ -95,6 +93,8 @@ export default {
     return{
       enviando:false
     }
+  },
+  created(){
   }
 }
 </script>
