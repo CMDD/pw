@@ -12,7 +12,7 @@ Vue.component('menu-nav', require('./components/MenuNav.vue').default);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('articulo-crear-component', require('./components/admin/articulos/Create.vue').default);
-Vue.component('configuracion-home', require('./components/admin/configuracion/Home.vue').default);
+Vue.component('configuracion-general', require('./components/admin/configuracion/General.vue').default);
 Vue.component('admin-contenido', require('./components/admin/configuracion/Contenido.vue').default);
 Vue.component('admin-categoria', require('./components/admin/configuracion/Categoria.vue').default);
 
@@ -30,8 +30,8 @@ let router = new Router({
       component: require('./components/admin/articulos/Create').default
     },
     {
-      path:'/administrador/configuracion',
-      component: require('./components/admin/configuracion/Home').default
+      path:'/configuracion/genearl',
+      component: require('./components/admin/configuracion/General').default
     }
   ],
   // mode: 'history'

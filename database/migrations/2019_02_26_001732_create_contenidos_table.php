@@ -15,7 +15,8 @@ class CreateContenidosTable extends Migration
     {
         Schema::create('contenidos', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('estado')->nullable();
+            $table->boolean('estado')->nullable()->default(true);
+            $table->boolean('delete')->nullable()->default(false);
             $table->string('nombre')->nullable();
             $table->string('descripcion')->nullable();
             
