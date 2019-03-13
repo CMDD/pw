@@ -66,7 +66,7 @@ import toastr from 'toastr'
 toastr.options ={
   "closeButton": true,
   "timeOut": "10000",
-  // "progressBar": true,
+  "progressBar": true,
 };
 export default {
     data(){
