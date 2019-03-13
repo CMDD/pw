@@ -23,8 +23,8 @@
             </div>
             <div class="content">
                 <div class="maincolumn">
-                    <div class="box">
-
+                    <div class="box slide-editor">
+                        <admin-slider></admin-slider>
                     </div>
                 </div>
                 <div class="sidebar">
@@ -47,7 +47,6 @@
                                     </div>
                                 </div>
                                 
-
                                 <a href="#" @click.prevent="mostrarInput" class="add">Agregar sección</a>
                                 <label v-for="categoria in categorias" :key="categoria.id"><input @change="cambiarEstadoCategoria(categoria)" v-model="categoria.estado"  :checked="categoria.estado" type="checkbox">{{categoria.nombre}}</label>
                                 

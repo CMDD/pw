@@ -4,7 +4,7 @@
     <li class="has-children opened">
     <a href="#">Contenido</a>
     <ul>
-    <li v-for="contenido in contenidos" :key="contenido.id" ><a href="/articulo">Eventos</a></li>
+    <li v-for="contenido in contenidos" :key="contenido.id" ><a href="/articulo">{{contenido.nombre}}</a></li>
 
     </ul>
     </li>

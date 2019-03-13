@@ -31,3 +31,7 @@ Route::get('contenido/{contenido}','ContenidoController@addContenido');
 Route::post('delete/contenido','ContenidoController@delete');
 // FIN RUTAS CONTENIDO
 
+//RUTAS SLIDER
+Route::get('slider/{id}','SliderController@getSliders');
+//FIN SLIDER
+

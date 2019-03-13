@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Administrador</title>
-<link rel="stylesheet" href="/panel/css/main.css" type='text/css' media='all'>
-<link rel="stylesheet" type="text/css" href="{{ asset('panel/css/configuracion.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
+        <link rel="stylesheet" href="/panel/css/main.css" type='text/css' media='all'>
+        <link rel="stylesheet" type="text/css" href="{{ asset('/panel/css/main.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('/panel/css/configuracion.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('/panel/css/slick.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('/panel/css/articulos.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 </head>
 
@@ -33,7 +36,10 @@
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/panel/js/main.js"></script>
+    <script type="text/javascript" src="/panel/js/slick.min.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
+
+
 </body>
 
 </html>
