@@ -2307,34 +2307,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 toastr__WEBPACK_IMPORTED_MODULE_1___default.a.options = {
   "closeButton": true,
-  "timeOut": "10000" // "progressBar": true,
-
+  "timeOut": "10000",
+  "progressBar": true
 };
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       contenidos: [],
+      categorias: [],
       addinput: false,
       contenido: ''
     };
   },
   created: function created() {
     this.getContenidos();
+    this.cargarCategorias();
   },
   methods: {
     addContenido: function addContenido() {
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/contenido/' + this.contenido).then(function (res) {
-        console.log(res.data);
-
         _this.getContenidos();
 
         _this.contenido = '';
@@ -2349,8 +2346,6 @@ toastr__WEBPACK_IMPORTED_MODULE_1___default.a.options = {
       var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/delete/contenido/', value).then(function (res) {
-        console.log(res.data);
-
         _this2.getContenidos();
       });
     },
@@ -2359,6 +2354,18 @@ toastr__WEBPACK_IMPORTED_MODULE_1___default.a.options = {
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/contenidos/' + 1).then(function (res) {
         _this3.contenidos = res.data;
+      });
+    },
+    cargarCategorias: function cargarCategorias() {
+      var _this4 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/categorias/' + 1).then(function (res) {
+        _this4.categorias = res.data;
+      });
+    },
+    cambiarEstadoCategoria: function cambiarEstadoCategoria(value) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/cambiar-estado-categoria/', value).then(function (res) {
+        console.log(res);
       });
     }
   }
@@ -2427,20 +2434,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -15702,13 +15695,57 @@ var render = function() {
                 [_vm._v("Agregar sección")]
               ),
               _vm._v(" "),
-              _vm._m(4),
-              _vm._v(" "),
-              _vm._m(5),
-              _vm._v(" "),
-              _vm._m(6),
-              _vm._v(" "),
-              _vm._m(7)
+              _vm._l(_vm.categorias, function(categoria) {
+                return _c("label", { key: categoria.id }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: categoria.estado,
+                        expression: "categoria.estado"
+                      }
+                    ],
+                    attrs: { type: "checkbox" },
+                    domProps: {
+                      checked: categoria.estado,
+                      checked: Array.isArray(categoria.estado)
+                        ? _vm._i(categoria.estado, null) > -1
+                        : categoria.estado
+                    },
+                    on: {
+                      change: [
+                        function($event) {
+                          var $$a = categoria.estado,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 &&
+                                _vm.$set(categoria, "estado", $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                _vm.$set(
+                                  categoria,
+                                  "estado",
+                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                )
+                            }
+                          } else {
+                            _vm.$set(categoria, "estado", $$c)
+                          }
+                        },
+                        function($event) {
+                          return _vm.cambiarEstadoCategoria(categoria)
+                        }
+                      ]
+                    }
+                  }),
+                  _vm._v(_vm._s(categoria.nombre))
+                ])
+              })
             ],
             2
           )
@@ -15779,42 +15816,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("input", { attrs: { checked: "", type: "checkbox" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", [
-      _c("input", { attrs: { type: "checkbox" } }),
-      _vm._v("Eventos")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", [
-      _c("input", { attrs: { type: "checkbox", checked: "" } }),
-      _vm._v("Real Audio")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", [
-      _c("input", { attrs: { type: "checkbox", checked: "" } }),
-      _vm._v("Donaciones")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", [
-      _c("input", { attrs: { type: "checkbox", checked: "" } }),
-      _vm._v("Contacto")
     ])
   }
 ]
@@ -15933,88 +15934,39 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row align-items-center" }, [
-    _c("div", { staticClass: "col-md-5 col-lg-3 py-4" }, [
-      _c("div", { staticClass: "banner-blue py-5 px-4" }, [
-        _c(
-          "ul",
-          { staticClass: "menu-accordion" },
-          [
-            _c("li", { staticClass: "has-children " }, [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Contenido")]),
-              _vm._v(" "),
-              _c(
-                "ul",
-                _vm._l(_vm.contenidos, function(contenido) {
-                  return _c("li", { key: contenido.id }, [
-                    contenido.estado
-                      ? _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(_vm._s(contenido.nombre))
-                        ])
-                      : _vm._e()
-                  ])
-                }),
-                0
-              )
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.categorias, function(categoria) {
-              return _c("li", { key: categoria.id }, [
-                categoria.estado
-                  ? _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(_vm._s(categoria.nombre))
-                    ])
-                  : _vm._e()
+  return _c("div", { staticClass: "banner-blue" }, [
+    _c(
+      "ul",
+      { staticClass: "menu-accordion" },
+      [
+        _c("li", { staticClass: "has-children opened" }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Contenido")]),
+          _vm._v(" "),
+          _c(
+            "ul",
+            _vm._l(_vm.contenidos, function(contenido) {
+              return _c("li", { key: contenido.id }, [
+                _c("a", { attrs: { href: "/articulo" } }, [_vm._v("Eventos")])
               ])
-            })
-          ],
-          2
-        ),
+            }),
+            0
+          )
+        ]),
         _vm._v(" "),
-        _c("input", { attrs: { type: "search" } })
-      ])
-    ]),
+        _vm._l(_vm.categorias, function(categoria) {
+          return categoria.estado
+            ? _c("li", { key: categoria.id }, [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(_vm._s(categoria.nombre))
+                ])
+              ])
+            : _vm._e()
+        })
+      ],
+      2
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "col-md-7 col-lg-9 pl-lg-5 py-4" }, [
-      _c("h3", [_vm._v("Evangelización")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos. Por eso te hemos traído estos tutoriales para que cambies esa decoración y coloques nuevos elementos, realizados con mucho amor y creatividad. Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos. Por eso te hemos traído estos tutoriales para que cambies esa decoración y coloques nuevos elementos, realizados con mucho amor y creatividad."
-        )
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "readmore", attrs: { href: "#" } }, [
-        _vm._v("Seguir leyendo"),
-        _c(
-          "svg",
-          {
-            attrs: {
-              viewBox: "0 0 28.657 22.458",
-              xmlns: "http://www.w3.org/2000/svg"
-            }
-          },
-          [
-            _c("g", { attrs: { transform: "translate(163.82 -2046.5)" } }, [
-              _c("path", {
-                attrs: {
-                  transform: "translate(3053.7 3460.4)",
-                  d:
-                    "M-3210.7-1401.276a2.043,2.043,0,0,0,0-2.8l-5.823-6.163a1.653,1.653,0,0,1-.167-2.091,2.558,2.558,0,0,1,3.941-.265l7.267,7.692a3.246,3.246,0,0,1,0,4.459l-7.267,7.692a2.559,2.559,0,0,1-3.941-.265,1.654,1.654,0,0,1,.167-2.091Z"
-                }
-              }),
-              _c("path", {
-                attrs: {
-                  transform: "translate(3068.7 3460.4)",
-                  d:
-                    "M-3210.7-1401.276a2.043,2.043,0,0,0,0-2.8l-5.823-6.163a1.653,1.653,0,0,1-.167-2.091,2.558,2.558,0,0,1,3.941-.265l7.267,7.692a3.246,3.246,0,0,1,0,4.459l-7.267,7.692a2.559,2.559,0,0,1-3.941-.265,1.654,1.654,0,0,1,.167-2.091Z"
-                }
-              })
-            ])
-          ]
-        )
-      ])
-    ])
+    _c("input", { attrs: { type: "search" } })
   ])
 }
 var staticRenderFns = []
@@ -31434,8 +31386,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jhonalvaroangulorojano/Documents/EMPRESAS/DESARROLLOS/plataforma-web/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jhonalvaroangulorojano/Documents/EMPRESAS/DESARROLLOS/plataforma-web/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/cccmd/Documents/Projects/pw/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/cccmd/Documents/Projects/pw/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -49,11 +49,8 @@
                                 
 
                                 <a href="#" @click.prevent="mostrarInput" class="add">Agregar sección</a>
-
-                                <label><input type="checkbox">Eventos</label>
-                                <label><input type="checkbox" checked>Real Audio</label>
-                                <label><input type="checkbox" checked>Donaciones</label>
-                                <label><input type="checkbox" checked>Contacto</label>
+                                <label v-for="categoria in categorias" :key="categoria.id"><input @change="cambiarEstadoCategoria(categoria)" v-model="categoria.estado"  :checked="categoria.estado" type="checkbox">{{categoria.nombre}}</label>
+                                
                         </div>
                     </div>
                 </div>
@@ -72,17 +69,18 @@ export default {
     data(){
         return{
             contenidos:[],
+            categorias:[],
             addinput:false,
             contenido:''
         }
     },
     created(){
         this.getContenidos()
+        this.cargarCategorias()
     },
     methods:{
         addContenido(){
              axios.get('/api/contenido/'+this.contenido).then(res=>{ 
-                    console.log(res.data);
                     this.getContenidos()
                     this.contenido='';
                     this.addinput = false;
@@ -94,7 +92,7 @@ export default {
         },
         eliminar(value){
             axios.post('api/delete/contenido/',value).then(res=>{
-              console.log(res.data);
+                
               this.getContenidos()
           });
         },
@@ -102,6 +100,16 @@ export default {
             axios.get('/api/contenidos/'+ 1).then(res=>{
             this.contenidos = res.data; 
      });
+        },
+        cargarCategorias(){
+          axios.get('/api/categorias/'+ 1).then(res=>{
+            this.categorias = res.data; 
+          });
+        },
+        cambiarEstadoCategoria(value){
+            axios.post('api/cambiar-estado-categoria/',value).then(res=>{
+              console.log(res);
+          });
         }
     }
     

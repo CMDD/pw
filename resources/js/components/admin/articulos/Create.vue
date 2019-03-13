@@ -92,7 +92,8 @@ export default {
   data(){
     return{
       categorias:[],
-      enviando:false
+      enviando:false,
+      
       
     }
   },
@@ -105,4 +106,5 @@ export default {
 </script>
 
 <style lang="css">
+
 </style>

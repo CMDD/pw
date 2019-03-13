@@ -24,6 +24,36 @@ class CategoriaTableSeeder extends Seeder
         $categoria->save();
 
         $categoria = new Categoria();
+        $categoria->nombre = 'Asamblea';
+        $categoria->emisora_id = 1;
+        $categoria->subcategoria = true;
+        $categoria->save();
+
+        $categoria = new Categoria();
+        $categoria->nombre = 'Eventos';
+        $categoria->emisora_id = 1;
+        $categoria->subcategoria = true;
+        $categoria->save();
+
+        $categoria = new Categoria();
+        $categoria->nombre = 'Donación';
+        $categoria->emisora_id = 1;
+        $categoria->subcategoria = true;
+        $categoria->save();
+
+        $categoria = new Categoria();
+        $categoria->nombre = 'Librerías';
+        $categoria->emisora_id = 1;
+        $categoria->subcategoria = true;
+        $categoria->save();
+
+        $categoria = new Categoria();
+        $categoria->nombre = 'Shalom';
+        $categoria->emisora_id = 1;
+        $categoria->subcategoria = true;
+        $categoria->save();
+
+        $categoria = new Categoria();
         $categoria->nombre = 'Medellin';
         $categoria->emisora_id = 2;
         $categoria->save();
