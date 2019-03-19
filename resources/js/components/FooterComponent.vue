@@ -4,7 +4,7 @@
           <div class="container">
               <div class="row">
                   <div class="col-md-6 py-4 px-md-5 col-left">
-                      <img src="img/logo-footer.svg" class="mb-4">
+                      <img src="/img/logo-footer.svg" class="mb-4">
                       <p>Carrera 73A Nº 81-32<br>Barrio Minuto de Dios, Bogotá<br>Teléfono: 7433070</p>
                       <span>SÍGUENOS</span>
                       <svg viewBox="0 0 31.099 31.099" xmlns="http://www.w3.org/2000/svg" width="30" class="icon-social"><path transform="translate(.5 .5)" d="M25.69,0H4.409A4.414,4.414,0,0,0,0,4.409V25.69A4.414,4.414,0,0,0,4.409,30.1h8.877V19.459H9.759V14.168h3.527V10.582a5.3,5.3,0,0,1,5.291-5.291h5.35v5.291h-5.35v3.586h5.35l-.882,5.291H18.577V30.1H25.69A4.414,4.414,0,0,0,30.1,25.69V4.409A4.414,4.414,0,0,0,25.69,0Zm0,0" fill="#fff"/></svg>
@@ -19,13 +19,13 @@
                           <input type="tel" placeholder="Teléfono">
                           <input type="email" placeholder="E-mail">
                           <textarea placeholder="Petición, queja, reclamo y/o sugerencia"></textarea>
-                          <div class="ixtus"><img src="img/ixtus.svg"></div><button type="submit" class="btn">Enviar</button>
+                          <div class="ixtus"><img src="/img/ixtus.svg"></div><button type="submit" class="btn">Enviar</button>
                       </form>
                   </div>
               </div>
               <div class="row">
                   <div class="col py-5 copyright">
-                      <img src="img/tiendamd.svg">
+                      <img src="/img/tiendamd.svg">
                   </div>
               </div>
           </div>

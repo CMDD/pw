@@ -2665,8 +2665,24 @@ __webpack_require__.r(__webpack_exports__);
         this.id = 1;
         break;
 
-      case '/medellin':
+      case '/emisora/bogota':
+        this.id = 1;
+        break;
+
+      case '/emisora/medellin':
         this.id = 2;
+        break;
+
+      case '/emisora/cartagena':
+        this.id = 3;
+        break;
+
+      case '/emisora/barranquilla':
+        this.id = 4;
+        break;
+
+      case '/emisora/ibague':
+        this.id = 5;
         break;
 
       default:
@@ -14756,7 +14772,7 @@ var render = function() {
           _c("div", { staticClass: "col-md-6 py-4 px-md-5 col-left" }, [
             _c("img", {
               staticClass: "mb-4",
-              attrs: { src: "img/logo-footer.svg" }
+              attrs: { src: "/img/logo-footer.svg" }
             }),
             _vm._v(" "),
             _vm._m(0),
@@ -14890,7 +14906,7 @@ var staticRenderFns = [
         }),
         _vm._v(" "),
         _c("div", { staticClass: "ixtus" }, [
-          _c("img", { attrs: { src: "img/ixtus.svg" } })
+          _c("img", { attrs: { src: "/img/ixtus.svg" } })
         ]),
         _c("button", { staticClass: "btn", attrs: { type: "submit" } }, [
           _vm._v("Enviar")
@@ -14904,7 +14920,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col py-5 copyright" }, [
-        _c("img", { attrs: { src: "img/tiendamd.svg" } })
+        _c("img", { attrs: { src: "/img/tiendamd.svg" } })
       ])
     ])
   }
@@ -16427,7 +16443,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "news-slide" }, [
           _c("div", { staticClass: "news-box" }, [
             _c("div", { staticClass: "image" }, [
-              _c("img", { attrs: { src: "img/news-example.jpg" } })
+              _c("img", { attrs: { src: "/img/news-example.jpg" } })
             ]),
             _c("div", { staticClass: "info" }, [
               _c("h3", [_vm._v("El Papa visita Colombia")]),
@@ -16446,7 +16462,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "news-box" }, [
             _c("div", { staticClass: "image" }, [
-              _c("img", { attrs: { src: "img/news-example.jpg" } })
+              _c("img", { attrs: { src: "/img/news-example.jpg" } })
             ]),
             _c("div", { staticClass: "info" }, [
               _c("h3", [_vm._v("Cómo decorar en navidad")]),
@@ -16465,7 +16481,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "news-box" }, [
             _c("div", { staticClass: "image" }, [
-              _c("img", { attrs: { src: "img/news-example.jpg" } })
+              _c("img", { attrs: { src: "/img/news-example.jpg" } })
             ]),
             _c("div", { staticClass: "info" }, [
               _c("h3", [_vm._v("Marzo 2019")]),

@@ -3,6 +3,7 @@
 
 
 Route::get('/','HomeController@index');
+Route::get('/emisora/{emisora}','HomeController@index');
 Route::get('/articulo',function(){
     return view('articulo');
 });

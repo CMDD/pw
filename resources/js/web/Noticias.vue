@@ -5,7 +5,7 @@
                     <div class="news-slide">
                         <div class="news-box">
                             <div class="image">
-                                <img src="img/news-example.jpg">
+                                <img src="/img/news-example.jpg">
                             </div><div class="info">
                                 <h3>El Papa visita Colombia</h3>
                                 <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos. Por eso te hemos traído estos tutoriales para que cambies esa decoración y coloques nuevos elementos, realizados con mucho amor y creatividad.</p>
@@ -14,7 +14,7 @@
                         </div>
                         <div class="news-box">
                             <div class="image">
-                                <img src="img/news-example.jpg">
+                                <img src="/img/news-example.jpg">
                             </div><div class="info">
                                 <h3>Cómo decorar en navidad</h3>
                                 <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos. Por eso te hemos traído estos tutoriales para que cambies esa decoración.</p>
@@ -23,7 +23,7 @@
                         </div>
                         <div class="news-box">
                             <div class="image">
-                                <img src="img/news-example.jpg">
+                                <img src="/img/news-example.jpg">
                             </div><div class="info">
                                 <h3>Marzo 2019</h3>
                                 <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos. Por eso te hemos traído estos tutoriales para que cambies esa decoración y coloques nuevos elementos, realizados con mucho amor y creatividad.</p>

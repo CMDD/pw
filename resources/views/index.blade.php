@@ -1,18 +1,30 @@
 @extends('layouts.web')
 @section('content')
-<div class="slide-home">
-            <div style="background-image: url(/img/slide-example.jpg);">
-                <div class="content">
-                    <img src="/img/elmanestavivo.svg">
-                    <a href="#" class="button">¡Suscríbete aquí!</a>
-                </div>
-            </div>
-            <div style="background-image: url(/img/slide-example.jpg);">
-                <div class="content">
-                    <img src="/img/elmanestavivo.svg">
-                </div>
-            </div>
+<div class="slide-home" >
+    
+    @forelse($sliders as $slider)
+    <div style="background-image: url(/{{$slider->image}});">
+        <div class="content">
+            <!-- <img src="/img/elmanestavivo.svg"> -->
+            @if($slider->mostrar_boton)
+            <a href="#" class="button">{{$slider->texto_boton}}</a>
+            @endif
         </div>
+    </div>
+    
+    @empty 
+    <div style="background-image: url(/img/slide-example.jpg);">
+        <div class="content">
+            <!-- <img src="/img/elmanestavivo.svg"> -->
+            
+            <a href="#" class="button">Sin Slider</a>
+            
+        </div>
+    </div>
+        
+    @endforelse   
+</div>
+        
         <div class="container-fluid">
             <div class="row align-items-center justify-content-center has-border-white">
                 <div class="col-md-5 col-lg-4 col-xl-3">
@@ -31,19 +43,19 @@
                     <div class="row">
                         <div class="col-md-4 py-3 px-xl-5">
                             <div class="banner-blue">
-                                <img src="img/banner-example.jpg">
+                                <img src="/img/banner-example.jpg">
                                 <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos.</p>
                             </div>
                         </div>
                         <div class="col-md-4 py-3 px-xl-5">
                             <div class="banner-blue">
-                                <img src="img/banner-example.jpg">
+                                <img src="/img/banner-example.jpg">
                                 <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos.</p>
                             </div>
                         </div>
                         <div class="col-md-4 py-3 px-xl-5">
                             <div class="banner-blue">
-                                <img src="img/banner-example.jpg">
+                                <img src="/img/banner-example.jpg">
                                 <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos.</p>
                             </div>
                         </div>

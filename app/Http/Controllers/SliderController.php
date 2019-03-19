@@ -12,8 +12,11 @@ class SliderController extends Controller
     }
 
     public function store(Request $request){
+
+        $val = ($request->mostrar_boton === 'true') ? true : false;
+       
         $slider = new Slider();
-        $slider->mostrar_boton = (bool)$request->mostrar_boton;
+        $slider->mostrar_boton = $val;
         $slider->texto_boton = $request->texto_boton;
         $slider->url_boton = $request->url_boton;
         $slider->image = $request->file('image')->store('sliders');
@@ -21,6 +24,6 @@ class SliderController extends Controller
         $slider->save();
         
 
-        return $request;
+        return 200;
     }
 }

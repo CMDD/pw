@@ -30,8 +30,20 @@ export default {
        case '/':
          this.id = 1;
          break;
-       case '/medellin':
+       case '/emisora/bogota':
+         this.id = 1;
+         break;
+       case '/emisora/medellin':
          this.id = 2;
+         break;
+       case '/emisora/cartagena':
+         this.id = 3;
+         break;
+       case '/emisora/barranquilla':
+         this.id = 4;
+         break;
+       case '/emisora/ibague':
+         this.id = 5;
          break;
      
        default:
