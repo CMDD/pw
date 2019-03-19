@@ -27,16 +27,16 @@
                           <a href="/" class="nav-link">Bogotá</a>
                         </li>
                         <li class="nav-item mx-2 {{request()->is('medellin') ? 'active':''}}">
-                          <a href="/medellin" class="nav-link">Medellín</a>
+                          <a href="/" class="nav-link">Medellín</a>
                         </li>
                         <li class="nav-item mx-2 {{request()->is('cartagena') ? 'active':''}}">
-                            <a class="nav-link" href="/cartagena">Cartagena</a>
+                            <a class="nav-link" href="/">Cartagena</a>
                         </li>
                         <li class="nav-item mx-2 {{request()->is('barranquilla') ? 'active':''}}">
-                            <a class="nav-link" href="/barranquilla">Barranquilla</a>
+                            <a class="nav-link" href="/">Barranquilla</a>
                         </li>
                         <li class="nav-item mx-2 {{request()->is('ibague') ? 'active':''}}">
-                            <a class="nav-link" href="/ibague">Ibagué</a>
+                            <a class="nav-link" href="/">Ibagué</a>
                         </li>
                     </ul>
                     <div class="d-inline-block my-2 my-lg-0">

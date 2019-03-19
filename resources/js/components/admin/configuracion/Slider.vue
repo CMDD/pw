@@ -1,62 +1,88 @@
 <template>
-<div>
-    <div class="slide">
-        <div style="background-image: url(img/slide-example.jpg);">
-            <a href="#" class="button">¡Suscríbete aquí!</a>
-        </div>
-        
 
-    </div>
-
-    <div class="slide-items">
-        <div v-for="(slider,i) in sliders" :key="'a' + i"  class="item" v-bind:style="{ backgroundImage: 'url(' + slider.image + ')' }">
-            <span class="delete"></span>
-        </div> 
-    </div>
+    
 
     <div class="slide-add">
+        <form @submit.prevent="subirSlider">
         <div class="add">
-        <input type="file" id="file" class="inputfile" />
+           
+        <input type="file" ref="file" id="file" @change="onFileSelected" class="inputfile" />
         <label for="file"><span>Agregar</span></label>
         </div>
         <div class="options">
-        <label><input type="checkbox" class="show-btn">¿Mostrar botón?</label>
+        <label><input v-model="form.mostrar" @checked="form.mostrar" type="checkbox" class="show-btn">¿Mostrar botón?</label>
         <div class="inputs">
-        <label>Texto: <input type="text"></label>
-        <label>Enlace: <input type="text"></label>
+        <label>Texto: <input v-model="form.texto_boton" type="text"></label>
+        <label>Enlace: <input v-model="form.url_boton" type="text"></label>
         </div>
         </div>
         <div class="save">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" fill="#09ab51" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg"  width="40" fill="#09ab51" viewBox="0 0 24 24">
+                    <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
+                </svg> 
+        </button>
+        
         </div>
+         </form> 
     </div>
-</div>
+
     
 </template>
 
 <script>
 import axios from 'axios'
+import toastr from 'toastr'
+toastr.options ={
+  "closeButton": true,
+  "timeOut": "10000",
+  "progressBar": true,
+};
 export default {
 
     data(){
         return{
-            sliders:[],
+            form:{
+                image:'',
+                texto_boton:'',
+                url_boton:'',
+                mostrar:false
+            }
            
         }
     },
     created(){
-        this.getSliders();
 
     },
     methods:{
-        getSliders(){
-            axios.get('api/slider/'+1).then(res => {
-                this.sliders = res.data;
-                
+        onFileSelected (event){
+            this.form.image = this.$refs.file.files[0];
+        },
+        subirSlider(){
+            let fd = new FormData();
+            fd.append('image',this.form.image);
+            fd.append('mostrar_boton',this.form.mostrar);
+            fd.append('texto_boton',this.form.texto_boton);
+            fd.append('url_boton',this.form.url_boton);
+            axios.post('api/crear/slider',
+            fd,{
+                headers:{
+                    'Content-Type': 'multipart/form-data'
+                }
+            }
+            ).then(res =>{
                 console.log(res.data);
+                // toastr.success('Slider creado correctamente');
+                window.location.reload()
+                
+                // setTimeout(toastr.success('Slider creado correctamente'),500000);
+                
                 
             });
+            
+            
         }
+        
         
     }
     

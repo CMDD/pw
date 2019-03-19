@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-USE App\Contenido;
+use App\Contenido;
 
 class ContenidoController extends Controller
 {
+
+    //web
+
+
+    // Api
     public function index($id){
         return Contenido::where('emisora_id',$id)->where('delete',false)->get();
     }

@@ -1,81 +1,86 @@
 @extends('layouts.admin')
 @section('content')
+<div id="container">
+            <div class="topbar">
+                <div class="show-nav"></div>
+                <div class="tabs">
+                    <span>Artículos:</span>
+                    <a href="#">Todos</a>
+                    <a class="active" href="#">Nuevo</a>
+                    <a href="#">Tags</a>
+                </div>
 
-<!-- Content Header (Page header) -->
-<section class="content-header">
-  <h1>
-    ARTÍCULOS
-    <small>Descripción</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li class="active">Inicio</li>
-  </ol>
-</section>
-<!-- Main content -->
-<section class="content container-fluid">
-  <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Listado de Artículos</h3>
+                <div class="user dropdown">
+                    <div class="open"><span>J</span></div>
+                    <div class="dropdown-content">
+                        <div class="group name">Hola, John</div>
+                        <div class="group links">
+                            <a href="#">IXTUS</a>
+                            <a href="#">Pagina Web</a>
+                            <a href="#">App ¡El Man Está Vivo!</a>
+                        </div>
+                        <a href="#" class="btn"><span>Cerrar sesión</span></a>
+                    </div>
+                </div>
+
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>Titulo</th>
-                  <th>Descripcion</th>
-                  <th>Acciones</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>Titulo</td>
-                  <td>Descripcion</td>
-                  <td>
-                    <a class="btn btn-primary btn-xs" href="#"> <i class="fa fa-eye"></i> </a>
-                    <a class="btn btn-danger btn-xs" href="#"> <i class="fa fa-times"></i> </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Titulo</td>
-                  <td>Descripcion</td>
-                  <td>
-                    <a class="btn btn-primary btn-xs" href="#"> <i class="fa fa-eye"></i> </a>
-                    <a class="btn btn-danger btn-xs" href="#"> <i class="fa fa-times"></i> </a>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
+            <div class="content">
+            <form action="{{url('crear/articulo')}}" method="POST" enctype="multipart/form-data">
+                <div class="maincolumn">        
+                    <div class="box editor">                        
+                            {!!csrf_field()!!}
+                            <input class="title" name="titulo" type="text" placeholder="Título">
+                            <label class="url">https://minutodedios.fm/<input type="text" name="slug" placeholder="url"></label>
+                            <textarea id="ckeditor" name="descripcion"></textarea>                        
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="widget active">
+                        <div class="title">Publicación</div>
+                        <div class="content">
+                            
+                            <button type="submit" class="btn">Publicar</button>
+                           
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="title">Categorías</div>
+                        <div class="content">
+                            @foreach($contenidos as $contenido)
+                            <div  class="child">
+                                    <label><input value="{{$contenido->id}}" name="contenido"  type="checkbox">{{$contenido->nombre}}</label>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="title">Tags</div>
+                        <div class="content">
+                            Lista de etiquetas...
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="title">Otra cosa</div>
+                        <div class="content">
+                            Otra cosa...
+                        </div>
+                    </div>
+                </div>
+            </form>
             </div>
-            <!-- /.box-body -->
-          </div>
-</section>
+        </div>
+
 @stop
 
 @push('style')
-<!-- DataTables -->
-<link rel="stylesheet" href="admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+
+<link rel="stylesheet" href="css/articulos.css" type='text/css' media='all'>
 @endpush
 
 @push('scripts')
-<!-- DataTables -->
-<script src="admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'ckeditor' );
+    </script>
 
-<script>
-  $(function () {
-    $('#example1').DataTable({
-      'paging'      : true,
-      'lengthChange': true,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : true,
-      language: {
-                    url: "{{ asset('css/spanish.json') }}"
-                }
-    })
-  })
-</script>
 @endpush

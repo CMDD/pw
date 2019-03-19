@@ -32,7 +32,7 @@
                         <div class="title">Secciones</div>
                         <div class="content">
                             <label><input type="checkbox" disabled checked>Contenido</label>
-                                <div v-for="contenido in contenidos" :key="contenido.id" class="child">
+                                <div v-for="(contenido,index) in contenidos" :key="'A'+index" class="child">
                                     <label><input  :checked="contenido.estado" type="checkbox">{{contenido.nombre}}</label>
                                     <span  onClick="javascript: return confirm('¿Estas seguro?');"  v-on:click="eliminar(contenido)" class="delete"></span>
                                 </div>
@@ -48,7 +48,7 @@
                                 </div>
                                 
                                 <a href="#" @click.prevent="mostrarInput" class="add">Agregar sección</a>
-                                <label v-for="categoria in categorias" :key="categoria.id"><input @change="cambiarEstadoCategoria(categoria)" v-model="categoria.estado"  :checked="categoria.estado" type="checkbox">{{categoria.nombre}}</label>
+                                <label v-for="(categoria,index) in categorias" :key="'b'+index"><input @change="cambiarEstadoCategoria(categoria)" v-model="categoria.estado"  :checked="categoria.estado" type="checkbox">{{categoria.nombre}}</label>
                                 
                         </div>
                     </div>
