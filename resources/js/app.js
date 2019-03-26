@@ -11,7 +11,7 @@ Vue.component('menu-nav', require('./components/MenuNav.vue').default);
 //FIN WEB COMPONENT
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('articulo-crear-component', require('./components/admin/articulos/Create.vue').default);
+Vue.component('articulo-crear', require('./components/admin/articulos/Create.vue').default);
 Vue.component('configuracion-general', require('./components/admin/configuracion/General.vue').default);
 Vue.component('admin-contenido', require('./components/admin/configuracion/Contenido.vue').default);
 Vue.component('admin-categoria', require('./components/admin/configuracion/Categoria.vue').default);

@@ -11,7 +11,7 @@
 
                 <div v-if="addinput" class="child temp">
                     <div><input checked type="checkbox"></div>
-                    <div><input v-model="contenido" type="text"></div>
+                    <div><input v-model="form.contenido" type="text"></div>
                     <div @click="addContenido"  class="save disabled">
                     <svg  xmlns="http://www.w3.org/2000/svg" width="18" fill="#09ab51" viewBox="0 0 24 24">
                     <path  d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
@@ -35,24 +35,35 @@ toastr.options ={
   "timeOut": "10000",
   "progressBar": true,
 };
+
+let user = document.head.querySelector('meta[name="user"]');
+var user_emisora;
+if (user){
+ var user_emisora = JSON.parse(user.content).emisora_id;
+}
 export default {
     data(){
         return{
             contenidos:[],
             categorias:[],
             addinput:false,
-            contenido:''
+            form:{
+                contenido:'',
+                emisora_id:''
+            }
+            
         }
     },
     created(){
         this.getContenidos()
         this.cargarCategorias()
+        this.form.emisora_id = user_emisora;
     },
     methods:{
         addContenido(){
-             axios.get('/api/contenido/'+this.contenido).then(res=>{ 
+             axios.post('/api/add/contenido/',this.form).then(res=>{ 
                     this.getContenidos()
-                    this.contenido='';
+                    this.form.contenido='';
                     this.addinput = false;
                     toastr.success('Se creó correctamente');
              });
@@ -67,12 +78,12 @@ export default {
           });
         },
         getContenidos(){
-            axios.get('/api/contenidos/'+ 1).then(res=>{
+            axios.get('/api/contenidos/'+ user_emisora ).then(res=>{
             this.contenidos = res.data; 
      });
         },
         cargarCategorias(){
-          axios.get('/api/categorias/'+ 1).then(res=>{
+          axios.get('/api/categorias/'+ 1 ).then(res=>{
             this.categorias = res.data; 
           });
         },

@@ -4,15 +4,18 @@ $.support.transition = false;
 
 $(document).ready(function () {
 
+    if ($('.slide-home').length){
+        $('.slide-home').slick({
+            accessibility: false
+        });
+    }
 
-    $('.slide-home').slick({
-        accessibility: false
-    });
-
-    $('.news-slide').slick({
-        adaptiveHeight: true,
-        accessibility: false
-    });
+    if ($('.news-slide').length){
+        $('.news-slide').slick({
+            adaptiveHeight: true,
+            accessibility: false
+        });
+    }
 
     $(".menu-accordion .has-children >a").click(function (e) {
 
@@ -40,6 +43,24 @@ $(document).ready(function () {
             }
         });
 
+    });
+
+    $('.player').on('click', '.btn-open, .btn-close', function(){
+        var container = $(this).parent().parent();
+        if ( container.hasClass('opened') ) {
+            container.removeClass('opened');
+        } else {
+            container.addClass('opened');
+        }
+    });
+
+    $('.player').on('click', '.control', function(){
+        var container = $(this).parents('.player');
+        if ( $(this).hasClass('played') ) {
+            container.find('.control').removeClass('played').addClass('paused');
+        } else {
+            container.find('.control').removeClass('paused').addClass('played');
+        }
     });
 
 });

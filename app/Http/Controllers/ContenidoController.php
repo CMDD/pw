@@ -28,11 +28,11 @@ class ContenidoController extends Controller
         return 200;
     }
 
-    public function addContenido($nombre){
+    public function addContenido(Request $request){
         $cont = new Contenido();
-        $cont->nombre = $nombre;      
-         $cont->emisora_id = 1;
+        $cont->nombre = $request->contenido;      
+         $cont->emisora_id = $request->emisora_id;
          $cont->save();
-        return $nombre;
+        return 200;
     }
 }

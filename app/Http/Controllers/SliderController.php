@@ -20,10 +20,16 @@ class SliderController extends Controller
         $slider->texto_boton = $request->texto_boton;
         $slider->url_boton = $request->url_boton;
         $slider->image = $request->file('image')->store('sliders');
-        $slider->emisora_id = 1;
+        $slider->emisora_id = $request->emisora_id;
         $slider->save();
         
 
         return 200;
+    }
+
+    public function delete(Slider $slider){
+        $slider->delete();
+        return back();
+
     }
 }

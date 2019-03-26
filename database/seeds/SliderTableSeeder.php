@@ -13,7 +13,7 @@ class SliderTableSeeder extends Seeder
     public function run()
     {
         $slider = new Slider();
-        $slider->image = "img/slide-example.jpg";
+        $slider->image = "img/slide-example-2.jpg";
         $slider->emisora_id = 1;
         $slider->save();
 

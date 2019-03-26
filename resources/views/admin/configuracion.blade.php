@@ -33,10 +33,9 @@
                 </div>
                 @endforeach
             </div>
-
             <div class="slide-items">
                 @foreach($sliders as $slider)
-                <div class="item" style="background-image: url({{$slider->image}});"><span class="delete"></span></div>
+                <div class="item" style="background-image: url({{$slider->image}});"><a href="{{url('eliminar/slider',$slider->id)}}" class="delete"></a></div>
                 @endforeach
             </div>
 

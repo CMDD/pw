@@ -3,50 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Slider;
 
 class HomeController extends Controller
 {
-    public function index($emisora = '/'){
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        // $this->middleware('auth');
+    }
 
-        switch ($emisora) {
-            case '/':
-                $sliders = Slider::where('emisora_id',1)->get();
-                
-                return view('index')->with('sliders',$sliders);
-                break;
-            case 'bogota':
-                $sliders = Slider::where('emisora_id',1)->get();
-                
-                
-                return view('index')->with('sliders',$sliders);
-                break;
-            
-            case 'medellin':
-                $sliders = Slider::where('emisora_id',2)->get();
-               
-                return view('index')->with('sliders',$sliders);
-                break;
-            case 'cartagena':
-                $sliders = Slider::where('emisora_id',3)->get();
-                
-                return view('index')->with('sliders',$sliders);
-                break;
-            case 'barranquilla':
-                $sliders = Slider::where('emisora_id',4)->get();
-                
-                return view('index')->with('sliders',$sliders);
-                break;
-            case 'ibague':
-                $sliders = Slider::where('emisora_id',5)->get();
-                
-                return view('index')->with('sliders',$sliders);
-                break;
-            
-            default:
-                # code...
-                break;
-        }
-        return view('index');
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
     }
 }

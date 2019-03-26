@@ -1,87 +1,80 @@
 <template>
   <div class="">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      ARTÍCULOS
-      <small>Crear</small>
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      <li >Articulos</li>
-      <li class="active">Crear</li>
-    </ol>
-  </section>
-  <!-- Main content -->
-  <section class="content container-fluid">
-    <div class="row">
-      <div class="col-md-7">
-    <div class="box box-primary">
-      <div class="box-header">
-        <h3 class="box-title">Crear un artículo</h3>
-      </div>
-      <form >
-      <div class="box-body">
-          <div class="form-group">
-            <label for="">Titulo del artículo</label>
-            <input type="text" name="" class="form-control" value="">
-          </div>
-          <div class="form-group">
-            <label for="">Descripcion del artículo</label>
-            <textarea id="editor" name="name" class="form-control" rows="8" cols="80"></textarea>
-          </div>
-      </div>
-      </form>
-    </div>
-  </div>
-  <!-- right column -->
-          <div class="col-md-5">
-            <!-- Horizontal Form -->
-            <div class="box box-info">
-              <div class="box-header with-border">
-                <h3 class="box-title">Datos</h3>
-              </div>
-
-                <div class="box-body">
-
-                  <div class="form-group">
-                    <label>Categoria</label>
-                    <select class="form-control" >
-                      <option  value="">Seleccione...</option>
-                      <option v-for="categoria in categorias"  :key="categoria.id" v-if="categoria.estado" >
-                        {{categoria.nombre}}</option>
-                      
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label>Tag</label>
-                    <select class="form-control"  >
-                      <option  value="">Seleccione...</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label>Imagen principal</label>
-                    <input type="file" id="file" ref="file" required  value="">
-                  </div>
-                  <div class="form-group">
-                    <label>Otras imagenes</label>
-                    <input type="file" id="files" ref="files"  multiple  value="">
-                  </div>
+  <div id="container">
+            <div class="topbar">
+                <div class="show-nav"></div>
+                <div class="tabs">
+                    <span>Artículos:</span>
+                    <a href="#">Todos</a>
+                    <a class="active" href="#">Nuevo</a>
+                    <a href="#">Tags</a>
                 </div>
-                <!-- /.box-body -->
-                <div class="box-footer">
-                  <button type="submit" class="btn btn-primary" :disabled="enviando" >
-                    <span v-if="enviando">Enviando...</span>
-                    <span v-else>Subir</span>
-                  </button>
+
+                <div class="user dropdown">
+                    <div class="open"><span>J</span></div>
+                    <div class="dropdown-content">
+                        <div class="group name">Hola, John</div>
+                        <div class="group links">
+                            <a href="#">IXTUS</a>
+                            <a href="#">Pagina Web</a>
+                            <a href="#">App ¡El Man Está Vivo!</a>
+                        </div>
+                        <a href="#" class="btn"><span>Cerrar sesión</span></a>
+                    </div>
                 </div>
+
             </div>
-            <!-- /.box -->
-          </div>
-          <!--/.col (right) -->
-  </div>
-  </section>
-
+            <div class="content">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div class="maincolumn">        
+                    <div class="box editor">                        
+                           
+                            <input class="title" name="titulo" type="text" placeholder="Título">
+                            <label class="url">https://minutodedios.fm/<input type="text" name="slug" placeholder="url"></label>
+                            <textarea id="ckeditor" name="descripcion"></textarea>  
+                            <div class="image">
+                                <span>Imagen destacada:</span>
+                                <input type="file" id="file" class="inputfile" />
+                                <label for="file"><span>Agregar</span></label>
+                                <span><em>Tamaño recomendado: 1920 × 700px</em></span>
+                            </div>                      
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="widget active">
+                        <div class="title">Publicación</div>
+                        <div class="content">
+                            
+                            <button type="submit" class="btn">Publicar</button>
+                           
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="title">Categorías</div>
+                        <div class="content">
+                            
+                            <div  class="child">
+                                    <label><input value="" name="contenido"  type="checkbox">hhh</label>
+                                </div>
+                           
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="title">Tags</div>
+                        <div class="content">
+                            Lista de etiquetas...
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="title">Otra cosa</div>
+                        <div class="content">
+                            Otra cosa...
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
 
   </div>
 </template>
@@ -101,6 +94,12 @@ export default {
     axios.get('/api/categorias/'+ 1).then(res=>{
        this.categorias = res.data; 
      });
+  },
+  methods:{
+    crearArticulo(){
+        console.log('llegando...');
+        
+    }
   }
 }
 </script>

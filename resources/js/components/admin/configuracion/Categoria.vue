@@ -113,6 +113,11 @@
 </template>
 <script>
 import axios from 'axios'
+let user = document.head.querySelector('meta[name="user"]');
+var user_emisora;
+if (user){
+ var user_emisora = JSON.parse(user.content).emisora_id;
+}
 export default {
     data(){
         return{
@@ -120,13 +125,15 @@ export default {
             form:{
             nombreCategoria:'',
             descripcionCategoria:'',
-            permitirSubcategoria:''
+            permitirSubcategoria:'',
+            emisora_id:''
             }
             
 
         }
     },
     created(){
+      this.form.emisora_id =user_emisora;
       this.cargarCategorias();
         
     },

@@ -15,25 +15,36 @@
 </template>
 <script>
 import axios from 'axios'
+let user = document.head.querySelector('meta[name="user"]');
+var user_emisora;
+if (user){
+ var user_emisora = JSON.parse(user.content).emisora_id;
+}
 export default {
   data(){
     return{
       enviando:false,
       contenidos:[],
       
-      contenido:''
+      
+      form:{
+        contenido:'',
+        emisora_id:''
+      }
     }
   },
   created(){
-      axios.get('/api/contenidos/'+ 1).then(res=>{
+      axios.get('/api/contenidos/'+ user_emisora ).then(res=>{
        this.contenidos = res.data; 
      });
+
+     this.form.emisora_id = user_emisora;
      
   },
   methods:{
     cambiarEstadoContenido(value){
       this.contenido = value;
-      axios.post('api/cambiar-estado-contenido/',this.contenido).then(res=>{
+      axios.post('api/cambiar-estado-contenido/',this.form).then(res=>{
           console.log(res);
       });
     }

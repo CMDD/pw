@@ -17,6 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// ARTICULOS
+Route::post('crear/articulo','ArticuloController@store');
+// FIN RUTAS ARTICULOS
+
 // RUTAS CATEGORIAS
 Route::get('categorias/{id}','CategoriaController@index');
 Route::post('cambiar-estado-categoria','CategoriaController@cambiarEstadoCategoria');
@@ -27,7 +31,7 @@ Route::post('crear/categoria','CategoriaController@store');
 // RUTAS PARA CONTENIDO
 Route::get('contenidos/{id}','ContenidoController@index');
 Route::post('cambiar-estado-contenido','ContenidoController@cambiarEstadoContenido');
-Route::get('contenido/{contenido}','ContenidoController@addContenido');
+Route::post('add/contenido','ContenidoController@addContenido');
 Route::post('delete/contenido','ContenidoController@delete');
 // FIN RUTAS CONTENIDO
 

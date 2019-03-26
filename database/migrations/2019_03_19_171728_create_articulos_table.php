@@ -15,8 +15,9 @@ class CreateArticulosTable extends Migration
     {
         Schema::create('articulos', function (Blueprint $table) {
             $table->increments('id');
+            $table->boolean('estado')->default(true);
             $table->string('titulo');
-            $table->string('slug');
+            $table->string('slug')->nullable();
             $table->text('descripcion');
             $table->string('image');
 

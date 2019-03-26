@@ -16,14 +16,13 @@
         <label>Enlace: <input v-model="form.url_boton" type="text"></label>
         </div>
         </div>
-        <div class="save">
-            <button type="submit">
+        
+            <button class="save" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg"  width="40" fill="#09ab51" viewBox="0 0 24 24">
                     <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                 </svg> 
         </button>
-        
-        </div>
+
          </form> 
     </div>
 
@@ -38,6 +37,13 @@ toastr.options ={
   "timeOut": "10000",
   "progressBar": true,
 };
+
+let user = document.head.querySelector('meta[name="user"]');
+var user_emisora;
+if (user){
+ var user_emisora = JSON.parse(user.content).emisora_id;
+}
+
 export default {
 
     data(){
@@ -46,15 +52,18 @@ export default {
                 image:'',
                 texto_boton:'',
                 url_boton:'',
-                mostrar:false
+                mostrar:false,
+                emisora_id : ''
             }
            
         }
     },
     created(){
-
+            console.log(user_emisora);
+            
     },
     methods:{
+       
         onFileSelected (event){
             this.form.image = this.$refs.file.files[0];
         },
@@ -64,6 +73,7 @@ export default {
             fd.append('mostrar_boton',this.form.mostrar);
             fd.append('texto_boton',this.form.texto_boton);
             fd.append('url_boton',this.form.url_boton);
+            fd.append('emisora_id',user_emisora);
             axios.post('api/crear/slider',
             fd,{
                 headers:{

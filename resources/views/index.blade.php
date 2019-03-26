@@ -16,8 +16,7 @@
     <div style="background-image: url(/img/slide-example.jpg);">
         <div class="content">
             <!-- <img src="/img/elmanestavivo.svg"> -->
-            
-            <a href="#" class="button">Sin Slider</a>
+            <!-- <a href="#" class="button">Sin Slider</a> -->
             
         </div>
     </div>

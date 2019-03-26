@@ -14,7 +14,7 @@
                 <div class="col-md-4 col-xl-3">
                    <seccion1></seccion1>
                     <div class="banner-blue">
-                        <img src="img/banner-example.jpg">
+                        <img src="/img/banner-example.jpg">
                         <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos.</p>
                     </div>
                 </div>
@@ -25,19 +25,19 @@
                 </div>
                 <div class="col-sm-4 col-xl-3">
                     <div class="banner-blue">
-                        <img src="img/banner-example.jpg">
+                        <img src="/img/banner-example.jpg">
                         <h3>Nombre</h3>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xl-3">
                     <div class="banner-blue">
-                        <img src="img/banner-example.jpg">
+                        <img src="/img/banner-example.jpg">
                         <h3>Nombre</h3>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xl-3">
                     <div class="banner-blue">
-                        <img src="img/banner-example.jpg">
+                        <img src="/img/banner-example.jpg">
                         <h3>Nombre</h3>
                     </div>
                 </div>

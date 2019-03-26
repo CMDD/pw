@@ -31,7 +31,13 @@
                             {!!csrf_field()!!}
                             <input class="title" name="titulo" type="text" placeholder="Título">
                             <label class="url">https://minutodedios.fm/<input type="text" name="slug" placeholder="url"></label>
-                            <textarea id="ckeditor" name="descripcion"></textarea>                        
+                            <textarea id="ckeditor" name="descripcion"></textarea>  
+                            <div class="image">
+                                <span>Imagen destacada:</span>
+                                <input type="file" id="file" class="inputfile" />
+                                <label for="file"><span>Agregar</span></label>
+                                <span><em>Tamaño recomendado: 1920 × 700px</em></span>
+                            </div>                      
                     </div>
                 </div>
                 <div class="sidebar">
