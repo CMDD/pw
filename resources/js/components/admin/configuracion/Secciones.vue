@@ -57,7 +57,7 @@ export default {
     created(){
         this.getContenidos()
         this.cargarCategorias()
-        this.form.emisora_id = user_emisora;
+       
     },
     methods:{
         addContenido(){
@@ -88,7 +88,7 @@ export default {
           });
         },
         cambiarEstadoCategoria(value){
-            axios.post('api/cambiar-estado-categoria/',value).then(res=>{
+            axios.post('/api/cambiar-estado-categoria/',value).then(res=>{
               console.log(res);
           });
         }
