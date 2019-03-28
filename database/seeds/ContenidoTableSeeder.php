@@ -12,11 +12,11 @@ class ContenidoTableSeeder extends Seeder
      */
     public function run()
     {
-        // $cont = new Contenido();
-        // $cont->nombre='Eventos';
-        // $cont->emisora_id = 1;
-        // $cont->estado = true;
-        // $cont->save();
+        $cont = new Contenido();
+        $cont->nombre='Articulos';
+        $cont->emisora_id = 1;
+        $cont->estado = true;
+        $cont->save();
 
         // $cont = new Contenido();
         // $cont->nombre='Librerías';
