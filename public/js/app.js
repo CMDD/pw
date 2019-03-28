@@ -2510,7 +2510,7 @@ if (user) {
       });
     },
     cambiarEstadoCategoria: function cambiarEstadoCategoria(value) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/cambiar-estado-categoria/', value).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/cambiar-estado-categoria/', value).then(function (res) {
         console.log(res);
       });
     }
