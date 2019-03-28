@@ -15,12 +15,13 @@ class CategoriaTableSeeder extends Seeder
         $categoria = new Categoria();
         $categoria->nombre = 'Real Audio';
         $categoria->emisora_id = 1;
+         $categoria->subcategoria = false;
         $categoria->save();
 
         $categoria = new Categoria();
         $categoria->nombre = 'Oración';
         $categoria->emisora_id = 1;
-        $categoria->subcategoria = true;
+        $categoria->subcategoria = false;
         $categoria->save();
 
         $categoria = new Categoria();
