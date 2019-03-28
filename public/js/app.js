@@ -2457,6 +2457,7 @@ if (user) {
   var user_emisora = JSON.parse(user.content).emisora_id;
 }
 
+axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.baseURL = 'https://web.minutodedios.fm/';
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {

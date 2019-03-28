@@ -41,6 +41,7 @@ var user_emisora;
 if (user){
  var user_emisora = JSON.parse(user.content).emisora_id;
 }
+axios.defaults.baseURL = 'https://web.minutodedios.fm/'
 export default {
     data(){
         return{
