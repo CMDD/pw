@@ -2589,9 +2589,7 @@ if (user) {
       }
     };
   },
-  created: function created() {
-    console.log(user_emisora);
-  },
+  created: function created() {},
   methods: {
     onFileSelected: function onFileSelected(event) {
       this.form.image = this.$refs.file.files[0];

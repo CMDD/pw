@@ -59,7 +59,7 @@ export default {
         }
     },
     created(){
-            console.log(user_emisora);
+
             
     },
     methods:{
