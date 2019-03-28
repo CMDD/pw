@@ -34,7 +34,7 @@ export default {
     }
   },
   created(){
-      axios.get('/api/contenidos/'+ user_emisora ).then(res=>{
+      axios.get('api/contenidos/'+ user_emisora ).then(res=>{
        this.contenidos = res.data; 
      });
 

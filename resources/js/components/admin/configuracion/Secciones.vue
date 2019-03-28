@@ -78,12 +78,12 @@ export default {
           });
         },
         getContenidos(){
-            axios.get('/api/contenidos/'+ user_emisora ).then(res=>{
+            axios.get('api/contenidos/'+ user_emisora ).then(res=>{
             this.contenidos = res.data; 
      });
         },
         cargarCategorias(){
-          axios.get('/api/categorias/'+ 1 ).then(res=>{
+          axios.get('api/categorias/'+ 1 ).then(res=>{
             this.categorias = res.data; 
           });
         },
