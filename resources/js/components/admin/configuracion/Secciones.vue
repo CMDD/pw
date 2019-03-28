@@ -61,7 +61,7 @@ export default {
     },
     methods:{
         addContenido(){
-             axios.post('/api/add/contenido/',this.form).then(res=>{ 
+             axios.post('api/add/contenido/',this.form).then(res=>{ 
                     this.getContenidos()
                     this.form.contenido='';
                     this.addinput = false;
