@@ -88,7 +88,7 @@ export default {
     },
     methods:{
         addContenido(){
-             axios.get('/api/contenido/'+this.contenido).then(res=>{ 
+             axios.get('api/contenido/'+this.contenido).then(res=>{ 
                     this.getContenidos()
                     this.contenido='';
                     this.addinput = false;
@@ -105,12 +105,12 @@ export default {
           });
         },
         getContenidos(){
-            axios.get('/api/contenidos/'+ user_emisora).then(res=>{
+            axios.get('api/contenidos/'+ user_emisora).then(res=>{
             this.contenidos = res.data; 
      });
         },
         cargarCategorias(){
-          axios.get('/api/categorias/'+ 1).then(res=>{
+          axios.get('api/categorias/'+ 1).then(res=>{
             this.categorias = res.data; 
           });
         },
