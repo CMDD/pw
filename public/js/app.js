@@ -2477,7 +2477,7 @@ if (user) {
     addContenido: function addContenido() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/add/contenido/', this.form).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/add/contenido/', this.form).then(function (res) {
         _this.getContenidos();
 
         _this.form.contenido = '';
@@ -2491,26 +2491,26 @@ if (user) {
     eliminar: function eliminar(value) {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/delete/contenido/', value).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/delete/contenido/', value).then(function (res) {
         _this2.getContenidos();
       });
     },
     getContenidos: function getContenidos() {
       var _this3 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/contenidos/' + user_emisora).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/contenidos/' + user_emisora).then(function (res) {
         _this3.contenidos = res.data;
       });
     },
     cargarCategorias: function cargarCategorias() {
       var _this4 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/categorias/' + 1).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/categorias/' + 1).then(function (res) {
         _this4.categorias = res.data;
       });
     },
     cambiarEstadoCategoria: function cambiarEstadoCategoria(value) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/cambiar-estado-categoria/', value).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/cambiar-estado-categoria/', value).then(function (res) {
         console.log(res);
       });
     }

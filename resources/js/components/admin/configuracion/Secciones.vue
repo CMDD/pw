@@ -61,7 +61,7 @@ export default {
     },
     methods:{
         addContenido(){
-             axios.post('api/add/contenido/',this.form).then(res=>{ 
+             axios.post('/api/add/contenido/',this.form).then(res=>{ 
                     this.getContenidos()
                     this.form.contenido='';
                     this.addinput = false;
@@ -72,23 +72,23 @@ export default {
             this.addinput = true
         },
         eliminar(value){
-            axios.post('api/delete/contenido/',value).then(res=>{
+            axios.post('/api/delete/contenido/',value).then(res=>{
                 
               this.getContenidos()
           });
         },
         getContenidos(){
-            axios.get('api/contenidos/'+ user_emisora ).then(res=>{
+            axios.get('/api/contenidos/'+ user_emisora ).then(res=>{
             this.contenidos = res.data; 
      });
         },
         cargarCategorias(){
-          axios.get('api/categorias/'+ 1 ).then(res=>{
+          axios.get('/api/categorias/'+ 1 ).then(res=>{
             this.categorias = res.data; 
           });
         },
         cambiarEstadoCategoria(value){
-            axios.post('api/cambiar-estado-categoria/',value).then(res=>{
+            axios.post('/api/cambiar-estado-categoria/',value).then(res=>{
               console.log(res);
           });
         }
