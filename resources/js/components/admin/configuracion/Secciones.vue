@@ -88,7 +88,7 @@ export default {
           });
         },
         cambiarEstadoCategoria(value){
-            axios.post('cambiar-estado-categoria/',value).then(res=>{
+            axios.post('public/api/cambiar-estado-categoria/',value).then(res=>{
               console.log(res);
           });
         }

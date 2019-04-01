@@ -23,14 +23,14 @@ Route::post('crear/articulo','ArticuloController@store');
 
 // RUTAS CATEGORIAS
 Route::get('categorias/{id}','CategoriaController@index');
-Route::post('cambiar-estado-categoria','CategoriaController@cambiarEstadoCategoria');
+Route::post('public/cambiar-estado-categoria','CategoriaController@cambiarEstadoCategoria');
 Route::post('crear/categoria','CategoriaController@store');
 
 // FIN RUTAS CATEGORIAS
 
 // RUTAS PARA CONTENIDO
 Route::get('contenidos/{id}','ContenidoController@index');
-
+Route::post('cambiar-estado-contenido','ContenidoController@cambiarEstadoContenido');
 Route::post('add/contenido','ContenidoController@addContenido');
 Route::post('delete/contenido','ContenidoController@delete');
 // FIN RUTAS CONTENIDO
