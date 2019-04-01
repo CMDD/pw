@@ -2511,7 +2511,7 @@ if (user) {
       });
     },
     cambiarEstadoCategoria: function cambiarEstadoCategoria(value) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/cambiar-estado-categoria/', value).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/cambiar-estado-categoria', value).then(function (res) {
         console.log(res);
       });
     }
@@ -32158,8 +32158,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jhonalvaroangulorojano/MD/pw/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jhonalvaroangulorojano/MD/pw/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/cccmd/Documents/Projects/pw/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/cccmd/Documents/Projects/pw/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
