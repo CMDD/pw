@@ -2511,7 +2511,7 @@ if (user) {
       });
     },
     cambiarEstadoCategoria: function cambiarEstadoCategoria(value) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('cambiar-estado-categoria/', value).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('public/cambiar-estado-categoria/', value).then(function (res) {
         console.log(res);
       });
     }
