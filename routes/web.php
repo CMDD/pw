@@ -8,6 +8,11 @@ Route::get('/emisora/{emisora}','EmisoraController@emisora');
 //     return view('articulo');
 // });
 
+//Eventos
+Route::get('eventos/{id}','Web\EventoController@index');
+//Categorias
+Route::get('categorias/{id}','CategoriaController@index');
+
 
 Route::get('admin',function(){return view('admin.index');});
 // Configuracion

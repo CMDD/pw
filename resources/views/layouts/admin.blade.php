@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="user" content="{{Auth::User()}}">
+    <meta name="emisora" content="{{Session::get('emisora')}}" > 
     <title>Administrador</title>
         <link rel="stylesheet" href="/panel/css/main.css" type='text/css' media='all'>
         <link rel="stylesheet" type="text/css" href="{{ asset('/panel/css/main.css') }}">

@@ -8,7 +8,7 @@
 
     </ul>
     </li>
-    <li v-if="categoria.estado" v-for="categoria in categorias" :key="categoria.id" ><a href="#">{{categoria.nombre}}</a></li>
+    <li v-if="categoria.estado" v-for="categoria in categorias" :key="categoria.id" ><a v-bind:href="'/'+categoria.url+'/'+categoria.emisora_id">{{categoria.nombre}}</a></li>
     </ul>
     <input type="search">
   </div>
@@ -16,6 +16,10 @@
 
 <script>
 import axios from 'axios'
+
+var emisora_content = document.getElementsByTagName('meta').emisora.content;
+
+
 export default {
     data(){
      return{
@@ -25,24 +29,24 @@ export default {
      }
    },
    created(){
-     console.log(this.$route.path);
-     switch (this.$route.path) {
+     console.log(emisora_content );
+     switch (emisora_content ) {
        case '/':
          this.id = 1;
          break;
-       case '/emisora/bogota':
+       case 'bogota':
          this.id = 1;
          break;
-       case '/emisora/medellin':
+       case 'medellin':
          this.id = 2;
          break;
-       case '/emisora/cartagena':
+       case 'cartagena':
          this.id = 3;
          break;
-       case '/emisora/barranquilla':
+       case 'barranquilla':
          this.id = 4;
          break;
-       case '/emisora/ibague':
+       case 'ibague':
          this.id = 5;
          break;
      
@@ -52,7 +56,7 @@ export default {
      axios.get('/api/contenidos/'+ this.id).then(res=>{
        this.contenidos = res.data; 
      });
-     axios.get('/api/categorias/'+ this.id).then(res=>{
+     axios.get('/categorias/'+ this.id).then(res=>{
        this.categorias = res.data; 
      });
    }

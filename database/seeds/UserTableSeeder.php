@@ -22,7 +22,7 @@ class UserTableSeeder extends Seeder
         $user->name = 'Javier cerra ';
         $user->email = 'web@minutodedios.fm';
         $user->password = bcrypt('qwe123');
-        $user->emisora_id= 1;
+        $user->emisora_id= 2;
         $user->save();
     }
 }

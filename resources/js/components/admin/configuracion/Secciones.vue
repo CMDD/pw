@@ -40,6 +40,7 @@ let user = document.head.querySelector('meta[name="user"]');
 var user_emisora;
 if (user){
  var user_emisora = JSON.parse(user.content).emisora_id;
+  
 }
 // axios.defaults.baseURL = 'https://web.minutodedios.fm/'
 export default {
@@ -56,6 +57,7 @@ export default {
         }
     },
     created(){
+        this.form.emisora_id = user_emisora;
         this.getContenidos()
         this.cargarCategorias()
        
@@ -83,7 +85,7 @@ export default {
      });
         },
         cargarCategorias(){
-          axios.get('/api/categorias/'+ 1 ).then(res=>{
+          axios.get('/api/categorias/'+user_emisora ).then(res=>{
             this.categorias = res.data; 
           });
         },
