@@ -27,4 +27,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::post('cambiar-estado-contenido','ContenidoController@cambiarEstadoContenido');
+Route::post('public/cambiar-estado-contenido','ContenidoController@cambiarEstadoContenido');
