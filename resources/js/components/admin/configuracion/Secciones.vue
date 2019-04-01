@@ -74,7 +74,6 @@ export default {
         },
         eliminar(value){
             axios.post('/api/delete/contenido/',value).then(res=>{
-                
               this.getContenidos()
           });
         },
