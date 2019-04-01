@@ -23,7 +23,7 @@ Route::post('crear/articulo','ArticuloController@store');
 
 // RUTAS CATEGORIAS
 Route::get('categorias/{id}','CategoriaController@index');
-Route::post('public/cambiar-estado-categoria','CategoriaController@cambiarEstadoCategoria');
+Route::post('cambiar-estado-categoria','CategoriaController@cambiarEstadoCategoria');
 Route::post('crear/categoria','CategoriaController@store');
 
 // FIN RUTAS CATEGORIAS
