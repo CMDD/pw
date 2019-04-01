@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="emisora" content="{{Session::get('emisora')}}" > 
     <title>Red de Emisoras Minuto de Dios</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css" type='text/css' media='all'>
     <link rel="stylesheet" href="/css/main.css" type='text/css' media='all'>
@@ -58,19 +59,19 @@
                 </button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item mx-2   {{request()->is('emisora/bogota') ? 'active':''}}">
+                        <li class="nav-item mx-2   {{Session::get('emisora') == 'bogota' ? 'active':''}}">
                           <a href="/emisora/bogota" class="nav-link">Bogotá</a>
                         </li>
-                        <li class="nav-item mx-2 {{request()->is('emisora/medellin') ? 'active':''}}">
+                        <li class="nav-item mx-2 {{Session::get('emisora') == 'medellin' ? 'active':''}}">
                           <a href="/emisora/medellin" class="nav-link">Medellín</a>
                         </li>
-                        <li class="nav-item mx-2 {{request()->is('emisora/cartagena') ? 'active':''}}">
+                        <li class="nav-item mx-2 {{Session::get('emisora') == 'cartagena' ? 'active':''}}">
                             <a class="nav-link" href="/emisora/cartagena">Cartagena</a>
                         </li>
-                        <li class="nav-item mx-2 {{request()->is('emisora/barranquilla') ? 'active':''}}">
+                        <li class="nav-item mx-2 {{Session::get('emisora') == 'barranquilla' ? 'active':''}}">
                             <a class="nav-link" href="/emisora/barranquilla">Barranquilla</a>
                         </li>
-                        <li class="nav-item mx-2 {{request()->is('emisora/ibague') ? 'active':''}}">
+                        <li class="nav-item mx-2 {{Session::get('emisora') == 'ibague'? 'active':''}}">
                             <a class="nav-link" href="/emisora/ibague">Ibagué</a>
                         </li>
                     </ul>
@@ -83,6 +84,7 @@
                 </div>
             </nav>
         </div>
+        
         @yield('content')
         <footer-component></footer-component>
 </div>

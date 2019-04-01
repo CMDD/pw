@@ -2471,6 +2471,7 @@ if (user) {
     };
   },
   created: function created() {
+    this.form.emisora_id = user_emisora;
     this.getContenidos();
     this.cargarCategorias();
   },
@@ -2506,7 +2507,7 @@ if (user) {
     cargarCategorias: function cargarCategorias() {
       var _this4 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/categorias/' + 1).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/categorias/' + user_emisora).then(function (res) {
         _this4.categorias = res.data;
       });
     },
@@ -2695,6 +2696,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+var emisora_content = document.getElementsByTagName('meta').emisora.content;
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2706,30 +2708,30 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    console.log(this.$route.path);
+    console.log(emisora_content);
 
-    switch (this.$route.path) {
+    switch (emisora_content) {
       case '/':
         this.id = 1;
         break;
 
-      case '/emisora/bogota':
+      case 'bogota':
         this.id = 1;
         break;
 
-      case '/emisora/medellin':
+      case 'medellin':
         this.id = 2;
         break;
 
-      case '/emisora/cartagena':
+      case 'cartagena':
         this.id = 3;
         break;
 
-      case '/emisora/barranquilla':
+      case 'barranquilla':
         this.id = 4;
         break;
 
-      case '/emisora/ibague':
+      case 'ibague':
         this.id = 5;
         break;
 
@@ -2740,7 +2742,7 @@ __webpack_require__.r(__webpack_exports__);
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/contenidos/' + this.id).then(function (res) {
       _this.contenidos = res.data;
     });
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/categorias/' + this.id).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/categorias/' + this.id).then(function (res) {
       _this.categorias = res.data;
     });
   }
@@ -16588,9 +16590,15 @@ var render = function() {
         _vm._l(_vm.categorias, function(categoria) {
           return categoria.estado
             ? _c("li", { key: categoria.id }, [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v(_vm._s(categoria.nombre))
-                ])
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href: "/" + categoria.url + "/" + categoria.emisora_id
+                    }
+                  },
+                  [_vm._v(_vm._s(categoria.nombre))]
+                )
               ])
             : _vm._e()
         })
@@ -32158,8 +32166,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jhonalvaroangulorojano/MD/pw/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jhonalvaroangulorojano/MD/pw/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/cccmd/Documents/Projects/pw/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/cccmd/Documents/Projects/pw/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -19,6 +19,7 @@ class CreateCategoriasTable extends Migration
             $table->boolean('subcategoria')->nullable();
             $table->string('nombre')->nullable();
             $table->string('descripcion')->nullable();
+            $table->string('url')->nullable();
             
             $table->integer('emisora_id')->unsigned()->nullable();
             $table->foreign('emisora_id')

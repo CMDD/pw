@@ -34,6 +34,14 @@ class CategoriaTableSeeder extends Seeder
         $categoria->nombre = 'Eventos';
         $categoria->emisora_id = 1;
         $categoria->subcategoria = true;
+        $categoria->url= 'eventos';
+        $categoria->save();
+
+        $categoria = new Categoria();
+        $categoria->nombre = 'Eventos';
+        $categoria->emisora_id = 2;
+        $categoria->subcategoria = true;
+        $categoria->url= 'eventos';
         $categoria->save();
 
         $categoria = new Categoria();
