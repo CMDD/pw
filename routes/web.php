@@ -25,3 +25,4 @@ Route::get('articulo/show','Web\ArticuloController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
