@@ -18,7 +18,7 @@
                     </svg>
                     </div>
                 </div>
-                
+
                 <a href="#" @click.prevent="mostrarInput" class="add">Agregar sección</a>
                 <label v-for="(categoria,index) in categorias" :key="'b'+index"><input @change="cambiarEstadoCategoria(categoria)" v-model="categoria.estado"  :checked="categoria.estado" type="checkbox">{{categoria.nombre}}</label>
                 
@@ -52,13 +52,11 @@ export default {
                 contenido:'',
                 emisora_id:''
             }
-            
         }
     },
     created(){
         this.getContenidos()
         this.cargarCategorias()
-       
     },
     methods:{
         addContenido(){
@@ -78,9 +76,9 @@ export default {
           });
         },
         getContenidos(){
-            axios.get('/api/contenidos/'+ user_emisora ).then(res=>{
-            this.contenidos = res.data; 
-     });
+              axios.get('/api/contenidos/'+ user_emisora ).then(res=>{
+           this.contenidos = res.data; 
+        });
         },
         cargarCategorias(){
           axios.get('/api/categorias/'+ 1 ).then(res=>{
