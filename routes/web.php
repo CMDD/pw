@@ -25,3 +25,6 @@ Route::get('articulo/show','Web\ArticuloController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::post('cambiar-estado-contenido','ContenidoController@cambiarEstadoContenido');

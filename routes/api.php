@@ -30,7 +30,7 @@ Route::post('crear/categoria','CategoriaController@store');
 
 // RUTAS PARA CONTENIDO
 Route::get('contenidos/{id}','ContenidoController@index');
-Route::post('cambiar-estado-contenido','ContenidoController@cambiarEstadoContenido');
+
 Route::post('add/contenido','ContenidoController@addContenido');
 Route::post('delete/contenido','ContenidoController@delete');
 // FIN RUTAS CONTENIDO
