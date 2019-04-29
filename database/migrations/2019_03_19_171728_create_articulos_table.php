@@ -17,6 +17,7 @@ class CreateArticulosTable extends Migration
             $table->increments('id');
             $table->boolean('estado')->default(true);
             $table->string('titulo');
+            $table->string('autor');
             $table->string('slug')->nullable();
             $table->text('descripcion');
             $table->string('image');
