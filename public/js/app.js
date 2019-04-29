@@ -2484,7 +2484,7 @@ if (user) {
 
         _this.form.contenido = '';
         _this.addinput = false;
-        toastr__WEBPACK_IMPORTED_MODULE_1___default.a.success('Se creó correctamente');
+        toastr__WEBPACK_IMPORTED_MODULE_1___default.a.success('Se creó correctamente .');
       });
     },
     mostrarInput: function mostrarInput() {

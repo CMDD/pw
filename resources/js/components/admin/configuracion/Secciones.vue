@@ -66,7 +66,7 @@ export default {
                     this.getContenidos()
                     this.form.contenido='';
                     this.addinput = false;
-                    toastr.success('Se creó correctamente');
+                    toastr.success('Se creó correctamente .');
              });
         },
         mostrarInput(){
