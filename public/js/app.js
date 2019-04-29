@@ -2479,7 +2479,7 @@ if (user) {
     addContenido: function addContenido() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/add/contenido/', this.form).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/add/contenido/', this.form).then(function (res) {
         _this.getContenidos();
 
         _this.form.contenido = '';
