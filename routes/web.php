@@ -27,6 +27,11 @@ Route::get('articulos/crear',function(){ return view('admin.articulos.crear'); }
 //Articulos web
 Route::get('articulo/show','Web\ArticuloController@show');
 
+//blog
+Route::get('blog',function(){
+    return view('blog');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
