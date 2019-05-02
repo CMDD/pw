@@ -14,7 +14,7 @@ Route::get('eventos/{id}','Web\EventoController@index');
 Route::get('categorias/{id}','CategoriaController@index');
 
 
-Route::get('admin',function(){return view('admin.index');});
+Route::get('admin',function(){return view('admin.login');});
 // Configuracion
 Route::get('configuracion','ConfiguracionController@index');
     //Slider

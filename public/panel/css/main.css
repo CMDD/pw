@@ -10,6 +10,7 @@ html, body, #app {
 body {
     font-family: 'Quicksand', sans-serif;
     font-size: 1rem;
+    color: #151b26;
 }
 #app {
     display: flex;
@@ -24,6 +25,7 @@ input[type=text], textarea {
     display: block;
     width: 100%;
     border: 1px solid #dadada;
+    background: #fff;
     padding: 10px;
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
@@ -58,6 +60,7 @@ input:hover, input:focus, textarea:hover, textarea:focus {
     display: inline-block;
     padding: 7px 14px;
     font-size: .9rem;
+    border: 0;
     border-radius: 5px;
     color: #fff;
     background-color: #1ebbf0;
@@ -78,6 +81,9 @@ input:hover, input:focus, textarea:hover, textarea:focus {
 }
 .btn:hover:before {
     opacity: 1;
+}
+.btn:focus {
+    outline: none;
 }
 
 #nav {
@@ -153,6 +159,7 @@ input:hover, input:focus, textarea:hover, textarea:focus {
     display: flex;
     flex-direction: column;
     flex: 1;
+    min-width: 0;
     background: #f7f7f7;
 }
 
@@ -274,6 +281,7 @@ input:hover, input:focus, textarea:hover, textarea:focus {
 
 .maincolumn {
     flex: 1;
+    min-width: 0;
     padding: 40px 40px 0 40px;
 }
 
@@ -281,7 +289,6 @@ input:hover, input:focus, textarea:hover, textarea:focus {
     display: block;
     margin: auto;
     max-width: 1000px;
-    min-width: 500px;
     background: #fff;
     border: 1px solid #dadada;
     padding: 20px;
