@@ -14,6 +14,13 @@ class ArticuloController extends Controller
         return 'hola index';
     }
 
+    public function lista(){
+
+        return view('admin.articulos.lista');
+    }
+
+
+
     public function create(){
         $contenidos = Contenido::where('emisora_id',1)->where('delete',false)->get();
         return view('admin.articulos.crear')->with('contenidos',$contenidos);
