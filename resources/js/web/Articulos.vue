@@ -18,7 +18,7 @@
                                     </div>
                                   
                                     
-                                    <a href="/articulo/show" class="readmore">Seguir leyendo</a>
+                                    <a  v-bind:href="'/articulo/show/'+ articulo.id"  class="readmore">Seguir leyendo</a>
                                 </div>
                             </div>
                            

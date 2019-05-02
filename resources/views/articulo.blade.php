@@ -4,12 +4,10 @@
             <div class="row justify-content-center has-border-white-bottom">
                 <div class="col-md-8 col-xl-6">
                     <div class="featured-image">
-                        <img src="/img/art-example.jpg">
+                        <img src="/{{$articulo->image}}">
                     </div>
-                    <h1>Los niños buscan su hogar</h1>
-                    <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos. Por eso te hemos traído estos tutoriales para que cambies esa decoración y coloques nuevos elementos, realizados con mucho amor y creatividad. Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos. Por eso te hemos traído estos tutoriales para que cambies esa decoración y coloques nuevos elementos, realizados con mucho amor y creatividad.</p>
-                    <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos. Por eso te hemos traído estos tutoriales para que cambies esa decoración y coloques nuevos elementos, realizados con mucho amor y creatividad. Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos. Por eso te hemos traído estos tutoriales para que cambies esa decoración y coloques nuevos elementos, realizados con mucho amor y creatividad.</p>
-                    <p>Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos. Por eso te hemos traído estos tutoriales para que cambies esa decoración y coloques nuevos elementos, realizados con mucho amor y creatividad. Todos los años queremos que haya algo nuevo en la decoración navideña, algo de acuerdo a nuestra personalidad y nuestros gustos. Por eso te hemos traído estos tutoriales para que cambies esa decoración y coloques nuevos elementos, realizados con mucho amor y creatividad.</p>
+                    <h1>{!!$articulo->titulo!!}</h1>
+                    {!!$articulo->descripcion!!}
                 </div>
                 <div class="col-md-4 col-xl-3">
                    <seccion1></seccion1>

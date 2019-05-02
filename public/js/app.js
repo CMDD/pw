@@ -16568,7 +16568,10 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "a",
-                { staticClass: "readmore", attrs: { href: "/articulo/show" } },
+                {
+                  staticClass: "readmore",
+                  attrs: { href: "/articulo/show/" + articulo.id }
+                },
                 [_vm._v("Seguir leyendo")]
               )
             ])
