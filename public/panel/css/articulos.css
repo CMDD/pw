@@ -9,25 +9,19 @@
     font-size: 2rem;
     font-weight: 500;
 }
-.maincolumn .editor .url {
-    display: block;
-    margin: 5px 10px 30px 10px;
-    font-size: .9rem;
-    white-space: nowrap;
-    cursor: pointer;
-}
-.maincolumn .editor .url input {
+
+.maincolumn .editor .author {
     display: inline-block;
+    vertical-align: middle;
     max-width: 300px;
-    font-size: inherit;
-    padding: 5px 0;
+    margin: 10px 0 20px 0;
     border: 0;
-    text-decoration: underline;
+    border-bottom: 1px solid #dadada;
 }
 
 .image {
     display: block;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 .image span {
     display: inline-block;
@@ -95,4 +89,8 @@
 }
 .image label:hover:before {
     opacity: 1;
+}
+
+.description textarea {
+    margin-top: 10px;
 }

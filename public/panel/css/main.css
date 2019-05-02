@@ -65,6 +65,7 @@ input:hover, input:focus, textarea:hover, textarea:focus {
     color: #fff;
     background-color: #1ebbf0;
     background: linear-gradient(135deg, #1bb0e2 30%, #35cc9b 100% );
+    cursor: pointer;
 }
 .btn span {
     position: relative;
