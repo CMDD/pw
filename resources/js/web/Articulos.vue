@@ -8,7 +8,9 @@
                     <div class="row">
                         <div class="col-12 blog-list">
                             <div class="row article" v-for="articulo in articulos" :key="articulo.id">
-                                <div class="col-12 col-md-4 image" style="background-image: url(/img/slide-example.jpg);"></div>
+                                <div class="col-12 col-md-4 image" v-bind:style="{ backgroundImage: 'url(' + '/' + articulo.image+')' }">
+
+                                </div>
                                 <div class="col-12 col-md-8 info"  >
                                     <span class="date">25 de febrero, 2019</span>
                                     <h2>{{articulo.titulo}}</h2>

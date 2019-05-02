@@ -2664,6 +2664,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -16552,7 +16554,7 @@ var render = function() {
           return _c("div", { key: articulo.id, staticClass: "row article" }, [
             _c("div", {
               staticClass: "col-12 col-md-4 image",
-              staticStyle: { "background-image": "url(/img/slide-example.jpg)" }
+              style: { backgroundImage: "url(" + "/" + articulo.image + ")" }
             }),
             _vm._v(" "),
             _c("div", { staticClass: "col-12 col-md-8 info" }, [
