@@ -28,28 +28,27 @@
             <form action="{{url('crear/articulo')}}" method="POST" enctype="multipart/form-data">
                 <div class="maincolumn">        
                     <div class="box editor">                        
-                            {!!csrf_field()!!}
-                            <input class="title" required name="titulo" type="text" placeholder="Título">
-                            <label class="url">https://minutodedios.fm/<input type="text" name="slug" placeholder="url"></label>
-                            <textarea id="ckeditor" name="descripcion" required></textarea>  
-                            <div class="image">
-                                <span>Imagen destacada:</span>
-                                <input type="file" required name="file" id="file" class="inputfile" />
-                                <label for="file"><span>Agregar</span></label>
-                                <span><em>Tamaño recomendado: 1920 × 700px</em></span>
-                            </div>                      
+                        {!!csrf_field()!!}
+                        <input class="title" required name="titulo" type="text" placeholder="Título">
+                        <input class="author" type="text" placeholder="Autor">
+                        <textarea id="ckeditor" name="descripcion" required></textarea>
+                        <div class="image">
+                            <span>Imagen destacada:</span>
+                            <input type="file" required name="file" id="file" class="inputfile" />
+                            <label for="file"><span>Agregar</span></label>
+                            <span><em>Tamaño recomendado: 1920 × 700px</em></span>
+                        </div>
+                        <label class="description">Descripción corta:<textarea rows="4"></textarea></label>
                     </div>
                 </div>
                 <div class="sidebar">
                     <div class="widget active">
                         <div class="title">Publicación</div>
                         <div class="content">
-                            
-                            <button type="submit" class="btn">Publicar</button>
-                           
+                            <button type="submit" class="btn"><span>Publicar</span></button>
                         </div>
                     </div>
-                    <div class="widget">
+                    <div class="widget active">
                         <div class="title">Categorías</div>
                         <div class="content">
                             @foreach($contenidos as $contenido)
@@ -57,18 +56,6 @@
                                     <label><input value="{{$contenido->id}}" name="contenido"  type="checkbox">{{$contenido->nombre}}</label>
                                 </div>
                             @endforeach
-                        </div>
-                    </div>
-                    <div class="widget">
-                        <div class="title">Tags</div>
-                        <div class="content">
-                            Lista de etiquetas...
-                        </div>
-                    </div>
-                    <div class="widget">
-                        <div class="title">Otra cosa</div>
-                        <div class="content">
-                            Otra cosa...
                         </div>
                     </div>
                 </div>
