@@ -19,7 +19,7 @@
                     <div class="box editor">                        
                         {!!csrf_field()!!}
                         <input class="title" required name="titulo" type="text" placeholder="Título">
-                        <input class="author" type="text" placeholder="Autor">
+                        <input name="autor" class="author" type="text" placeholder="Autor">
                         <textarea id="ckeditor" name="descripcion" required></textarea>
                         <div class="image">
                             <span>Imagen destacada:</span>
@@ -27,7 +27,7 @@
                             <label for="file"><span>Agregar</span></label>
                             <span><em>Tamaño recomendado: 1920 × 700px</em></span>
                         </div>
-                        <label class="description">Descripción corta:<textarea rows="4"></textarea></label>
+                        <label class="description">Descripción corta:<textarea rows="4" name="descripcion_corta"></textarea></label>
                     </div>
                 </div>
                 <div class="sidebar">

@@ -19,7 +19,7 @@
                             <a href="#">Pagina Web</a>
                             <a href="#">App ¡El Man Está Vivo!</a>
                         </div>
-                        <a href="#" class="btn"><span>Cerrar sesión</span></a>
+                        <a href="/logout" class="btn"><span>Cerrar sesión</span></a>
                     </div>
                 </div>
 

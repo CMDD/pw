@@ -13,7 +13,7 @@
                                     <span class="date">25 de febrero, 2019</span>
                                     <h2>{{articulo.titulo}}</h2>
                                     
-                                    <div v-html="articulo.descripcion.substr(0,400).concat('...')">
+                                    <div v-html="articulo.descripcion_corta">
 
                                     </div>
                                   

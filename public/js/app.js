@@ -15214,7 +15214,7 @@ var staticRenderFns = [
                 ])
               ]),
               _vm._v(" "),
-              _c("a", { staticClass: "btn", attrs: { href: "#" } }, [
+              _c("a", { staticClass: "btn", attrs: { href: "/logout" } }, [
                 _c("span", [_vm._v("Cerrar sesión")])
               ])
             ])
@@ -16563,11 +16563,7 @@ var render = function() {
               _c("h2", [_vm._v(_vm._s(articulo.titulo))]),
               _vm._v(" "),
               _c("div", {
-                domProps: {
-                  innerHTML: _vm._s(
-                    articulo.descripcion.substr(0, 400).concat("...")
-                  )
-                }
+                domProps: { innerHTML: _vm._s(articulo.descripcion_corta) }
               }),
               _vm._v(" "),
               _c(

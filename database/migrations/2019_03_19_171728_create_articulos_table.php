@@ -20,6 +20,7 @@ class CreateArticulosTable extends Migration
             $table->string('autor')->nullable();
             $table->string('slug')->nullable();
             $table->text('descripcion');
+            $table->text('descripcion_corta')->nullable();
             $table->string('image');
 
 

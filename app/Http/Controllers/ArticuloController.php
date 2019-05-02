@@ -24,8 +24,10 @@ class ArticuloController extends Controller
     public function store(Request $request){
         $articulo = new Articulo();
         $articulo->titulo = $request->titulo;
+        $articulo->autor = $request->autor;
         $articulo->slug = $request->slug;
         $articulo->descripcion  = $request->descripcion;
+        $articulo->descripcion_corta  = $request->descripcion_corta;
         $articulo->slug = $request->slug;
         $articulo->emisora_id = Auth::User()->id;
         $articulo->contenido_id = $request->contenido;
