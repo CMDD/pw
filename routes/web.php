@@ -24,6 +24,7 @@ Route::get('eliminar/slider/{slider}','SliderController@delete');
 Route::post('autenticacion','UserController@autenticacion');
 Route::get('logout','UserController@logout');
 Route::post('crear/articulo','ArticuloController@store');
+Route::get('lista/articulos','ArticuloController@lista');
 Route::get('articulos','ArticuloController@create');
 Route::get('articulos/crear',function(){ return view('admin.articulos.crear'); });
 //Articulos web

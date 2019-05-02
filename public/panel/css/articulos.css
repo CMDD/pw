@@ -2,15 +2,14 @@
     display: flex;
     flex: 1;
 }
-.maincolumn .editor .title {
+.editor .title {
     border-top: 0;
     border-left: 0;
     border-right: 0;
     font-size: 2rem;
     font-weight: 500;
 }
-
-.maincolumn .editor .author {
+.editor .author {
     display: inline-block;
     vertical-align: middle;
     max-width: 300px;
@@ -18,21 +17,20 @@
     border: 0;
     border-bottom: 1px solid #dadada;
 }
-
-.image {
+.editor .image {
     display: block;
     margin: 20px 0;
 }
-.image span {
+.editor .image span {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
 }
-.image span em {
+.editor .image span em {
     font-size: .8rem;
     margin-left: 10px;
 }
-.image .inputfile {
+.editor .image .inputfile {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -41,7 +39,7 @@
     top: 0;
 	z-index: -1;
 }
-.image .inputfile + label {
+.editor .image .inputfile + label {
     position: relative;
     display: inline-block;
     vertical-align: middle;
@@ -56,14 +54,14 @@
     -webkit-transition: all .3s ease;
             transition: all .3s ease;
 }
-.image .inputfile + label:hover {
+.editor .image .inputfile + label:hover {
     background-color: #09ab51;
 
 }
-.image .inputfile + label {
+.editor .image .inputfile + label {
 	cursor: pointer;
 }
-.image .inputfile + label span {
+.editor .image .inputfile + label span {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -74,10 +72,10 @@
     overflow: hidden;
     width: 80%;
 }
-.image label span {
+.editor .image label span {
     position: relative;
 }
-.image label:before {
+.editor .image label:before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -87,10 +85,71 @@
     -webkit-transition: all .3s ease;
             transition: all .3s ease;
 }
-.image label:hover:before {
+.editor .image label:hover:before {
     opacity: 1;
 }
-
-.description textarea {
+.editor .description textarea {
     margin-top: 10px;
+}
+
+.maincolumn .box.list {
+    max-width: none;
+}
+.list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.list tr:nth-child(odd) {
+    background: #f7f7f7;
+}
+.list .titles {
+    background: #f2f2f2!important;
+    font-weight: 700;
+}
+.list td {
+    padding: 15px;
+}
+.list .actions {
+    text-align: center;
+}
+.list .actions a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+}
+.list .actions a:hover {
+    opacity: .7;
+}
+.list .actions a.view {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%230090be' viewBox='0 0 24 24'%3E%3Cpath d='M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.209 0-4 1.792-4 4 0 2.209 1.791 4 4 4s4-1.791 4-4c0-2.208-1.791-4-4-4z'/%3E%3C/svg%3E");
+    width: 18px;
+    height: 18px;
+}
+.list .actions a.edit {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%230090be' viewBox='0 0 24 24'%3E%3Cpath d='M7.127 22.564l-7.126 1.436 1.438-7.125 5.688 5.689zm-4.274-7.104l5.688 5.689 15.46-15.46-5.689-5.689-15.459 15.46z'/%3E%3C/svg%3E");
+}
+.list .actions a.delete {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='%230090be' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 24h-14c-1.104 0-2-.896-2-2v-16h18v16c0 1.104-.896 2-2 2m-9-14c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm6 0c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm6-5h-20v-2h6v-1.5c0-.827.673-1.5 1.5-1.5h5c.825 0 1.5.671 1.5 1.5v1.5h6v2zm-12-2h4v-1h-4v1z'/%3E%3C/svg%3E");
+}
+.pagination {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 20px;
+}
+.pagination a {
+    color: #0090be;
+}
+.pagination a:hover {
+    opacity: .7;
+    text-decoration: underline;
+}
+.pagination a, .pagination span {
+    padding: 5px;
+    margin: 0 5px;
 }

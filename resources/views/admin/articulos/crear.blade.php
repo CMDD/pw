@@ -5,7 +5,7 @@
                 <div class="show-nav"></div>
                 <div class="tabs">
                     <span>Artículos:</span>
-                    <a href="#">Todos</a>
+                    <a href="/lista/articulos">Todos</a>
                     <a class="active" href="#">Nuevo</a>
                     <a href="#">Tags</a>
                 </div>
@@ -25,7 +25,7 @@
                             <span>Imagen destacada:</span>
                             <input type="file" required name="file" id="file" class="inputfile" />
                             <label for="file"><span>Agregar</span></label>
-                            <span><em>Tamaño recomendado: 1920 × 700px</em></span>
+                            <span><em>Tamaño recomendado: 1200 × 700px</em></span>
                         </div>
                         <label class="description">Descripción corta:<textarea rows="4" name="descripcion_corta"></textarea></label>
                     </div>
