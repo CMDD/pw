@@ -8,6 +8,7 @@ Vue.component('seccion1', require('./web/Seccion1.vue').default);
 Vue.component('noticias', require('./web/Noticias.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('menu-nav', require('./components/MenuNav.vue').default);
+Vue.component('articulos', require('./web/Articulos.vue').default);
 //FIN WEB COMPONENT
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);

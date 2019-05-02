@@ -8,8 +8,9 @@ use App\Http\Controllers\Controller;
 class ArticuloController extends Controller
 {
     public function show(){
-        
-
         return view('articulo');
+    }
+    public function index(){
+        return view('blog');
     }
 }

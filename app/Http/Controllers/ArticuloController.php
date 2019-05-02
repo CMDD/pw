@@ -38,4 +38,11 @@ class ArticuloController extends Controller
 
         return $articulo;
     }
+
+
+    // Api
+    public function articulos(){
+        
+        return Articulo::orderBy('id','DESC')->get();
+    }
 }
