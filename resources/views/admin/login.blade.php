@@ -21,9 +21,10 @@
             <div class="content">
                 <img src="panel/img/logo-cccmd.svg" class="logo">
                 <h2>Iniciar sesión</h2>
-                <form>
-                    <input type="email" placeholder="E-mail">
-                    <input type="password" placeholder="Contraseña">
+                <form action="{{url('autenticacion')}}" method="POST">
+                    {!!csrf_field()!!}
+                    <input type="email" name="email" placeholder="E-mail">
+                    <input type="password" name="password" placeholder="Contraseña">
                     <button type="submit" class="btn"><span>Iniciar sesión</span></button>
                 </form>
 
