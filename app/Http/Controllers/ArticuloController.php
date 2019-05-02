@@ -43,8 +43,8 @@ class ArticuloController extends Controller
 
 
     // Api
-    public function articulos(){
+    public function articulos($id){
         
-        return Articulo::orderBy('id','DESC')->get();
+        return Articulo::where('emisora_id',$id)->orderBy('id','DESC')->get();
     }
 }

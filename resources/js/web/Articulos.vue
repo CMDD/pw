@@ -37,6 +37,7 @@
 
 <script>
 import axios from 'axios'
+var emisora_content = document.getElementsByTagName('meta').emisora.content;
 export default {
     data(){
         return{
@@ -44,11 +45,35 @@ export default {
         }
     },
     created(){
-        this.getArticulos()
-    },
+     console.log(emisora_content);
+     switch (emisora_content ) {
+       case '/':
+         this.id = 1;
+         break;
+       case 'bogota':
+         this.id = 1;
+         break;
+       case 'medellin':
+         this.id = 2;
+         break;
+       case 'cartagena':
+         this.id = 3;
+         break;
+       case 'barranquilla':
+         this.id = 4;
+         break;
+       case 'ibague':
+         this.id = 5;
+         break;
+     
+       default:
+         break;
+     }
+    this.getArticulos(this.id);
+   },
     methods:{
-        getArticulos(){
-            axios.get('/api/lista/articulos').then(res =>{
+        getArticulos(id){
+            axios.get('/api/lista/articulos/'+id).then(res =>{
                 this.articulos = res.data;
             });
         }

@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // ARTICULOS
 Route::post('crear/articulo','ArticuloController@store');
-Route::get('lista/articulos','ArticuloController@articulos');
+Route::get('lista/articulos/{id}','ArticuloController@articulos');
 // FIN RUTAS ARTICULOS
 
 // RUTAS CATEGORIAS

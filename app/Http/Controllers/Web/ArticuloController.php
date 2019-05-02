@@ -12,7 +12,8 @@ class ArticuloController extends Controller
         $articulo = Articulo::find($id);
         return view('articulo')->with('articulo',$articulo);
     }
-    public function index(){
-        return view('blog');
+    public function index($id){
+        $articulos = Articulo::where('contenido_id',$id)->get();
+        return view('blog')->with('articulos',$articulos);
     }
 }

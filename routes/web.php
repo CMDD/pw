@@ -28,7 +28,7 @@ Route::get('articulos','ArticuloController@create');
 Route::get('articulos/crear',function(){ return view('admin.articulos.crear'); });
 //Articulos web
 Route::get('articulo/show/{id}','Web\ArticuloController@show');
-Route::get('articulo/index','Web\ArticuloController@index');
+Route::get('articulo/index/{id}','Web\ArticuloController@index');
 
 //blog
 Route::get('blog',function(){
