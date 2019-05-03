@@ -15,7 +15,7 @@ class ArticuloController extends Controller
     }
 
     public function lista(){
-        $articulos = Articulo::where('emisora_id',Auth::User()->emisora_id)->orderBy('id','DESC')->get();
+        $articulos = Articulo::all();
         return view('admin.articulos.lista')->with('articulos',$articulos);
     }
     public function editar($id){
