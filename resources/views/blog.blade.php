@@ -14,7 +14,7 @@
                             <div class="row article" >
                                 <div class="col-12 col-md-4 image" style='background-image:url(/{{$articulo->image}})'></div>
                                 <div class="col-12 col-md-8 info"  >
-                                    <span class="date">25 de febrero, 2019</span>
+                                    <span class="date">3 de Mayo, 2019</span>
                                     <h2>{{$articulo->titulo}}</h2>                                 
                                     <p>{!!$articulo->descripcion_corta!!}</p>
                                     <a  href="{{url('/articulo/show',$articulo->id)}}"  class="readmore">Seguir leyendo</a>

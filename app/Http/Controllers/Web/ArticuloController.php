@@ -15,7 +15,7 @@ class ArticuloController extends Controller
     }
     public function index($id){
         $contenido = Contenido::find($id);
-        $articulos = Articulo::where('contenido_id',$id)->get();
+        $articulos = Articulo::where('contenido_id',$id)->orderBy('id','DESC')->get();
         return view('blog')->with('articulos',$articulos)->with('contenido',$contenido);
     }
 }

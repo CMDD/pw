@@ -53,7 +53,7 @@
         </div>
         <div class="container-fluid header">
             <nav class="container navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand mr-auto mr-lg-5" href="#"><img src="/img/logo.svg" width="180" alt="Red de Emisoras Minuto de Dios"></a>
+                <a class="navbar-brand mr-auto mr-lg-5" href="/"><img src="/img/logo.svg" width="180" alt="Red de Emisoras Minuto de Dios"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
