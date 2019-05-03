@@ -27,7 +27,7 @@
                     <input type="password" name="password" placeholder="Contraseña">
                     <button type="submit" class="btn"><span>Iniciar sesión</span></button>
                 </form>
-
+                <img src="panel/img/logo-ixtus.svg" class="ixtus">
             </div>
         </div>
     </div>
