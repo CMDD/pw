@@ -23,6 +23,10 @@ Route::get('eliminar/slider/{slider}','SliderController@delete');
 //Articulo Admin
 Route::post('autenticacion','UserController@autenticacion');
 Route::get('logout','UserController@logout');
+Route::get('regitrarUser','UserController@regitrarUser');
+
+
+
 Route::post('crear/articulo','ArticuloController@store');
 Route::get('lista/articulos','ArticuloController@lista');
 Route::get('editar/articulo/{id}','ArticuloController@editar');

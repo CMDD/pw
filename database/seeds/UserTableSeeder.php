@@ -38,5 +38,58 @@ class UserTableSeeder extends Seeder
         $user->password = bcrypt('12345');
         $user->emisora_id= 1;
         $user->save();
+
+
+         $user = new User();
+        $user->name = 'Caro Carreño';
+        $user->email = 'astrid.Caro@minutodedios.fm';
+        $user->password = bcrypt('admin123');
+        $user->emisora_id= 1;
+        $user->save();
+
+        $user = new User();
+        $user->name = 'javier Riveros';
+        $user->email = 'riverosjavieres@gmail.com';
+        $user->password = bcrypt('admin123');
+        $user->emisora_id= 1;
+        $user->save();
+
+        $user = new User();
+        $user->name = 'Fredy Cubillos';
+        $user->email = 'fredy.Cubillos@minutodedios.fm';
+        $user->password = bcrypt('admin123');
+        $user->emisora_id= 1;
+        $user->save();
+
+        $user = new User();
+        $user->name = 'Yudith Diaz';
+        $user->email = 'fernanda.Diaz@minutodedios.fm';
+        $user->password = bcrypt('admin123');
+        $user->emisora_id= 1;
+        $user->save();
+
+        $user = new User();
+        $user->name = 'Donald Puerto';
+        $user->email = 'productor.bogota@minutodedios.fm';
+        $user->password = bcrypt('admin123');
+        $user->emisora_id= 1;
+        $user->save();
+
+        $user = new User();
+        $user->name = 'Camilo Torres';
+        $user->email = 'camilo.torres@zeroazul.com';
+        $user->password = bcrypt('admin123');
+        $user->emisora_id= 1;
+        $user->save();
+
+      
+
+         $user = new User();
+        $user->name = 'Carisma Verde';
+        $user->email = 'carismaverde@yahoo.com';
+        $user->password = bcrypt('admin123');
+        $user->emisora_id= 1;
+        $user->save();
+       
     }
 }

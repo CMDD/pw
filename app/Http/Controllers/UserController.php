@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Redirect;
+use App\User;
 
 class UserController extends Controller
 {
@@ -17,5 +18,10 @@ class UserController extends Controller
     public function logout(){
       Auth()->logout();
       return  Redirect::to('/admin');
+    }
+
+    public function regitrarUser(){
+
+       
     }
 }
