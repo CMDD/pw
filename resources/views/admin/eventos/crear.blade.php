@@ -78,10 +78,16 @@
 @endpush
 
 @push('scripts')
-
+<script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor.create(
+        document.querySelector( '#ckeditor' )
+    )
+</script>
+<!--
     <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
     <script>
         CKEDITOR.replace( 'ckeditor' );
     </script>
-
+-->
 @endpush
