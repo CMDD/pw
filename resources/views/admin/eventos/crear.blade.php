@@ -25,31 +25,32 @@
 
             </div>
             <div class="content">
-                <form>
+                <form action="{{url('store-evento')}}" method="POST" enctype="multipart/form-data">
+                {!!csrf_field()!!}
                     <div class="maincolumn">
                         <div class="box editor">
-                            <input class="title" type="text" placeholder="Nombre del evento">
+                            <input class="title" type="text" name="nombre" placeholder="Nombre del evento">
                             <div class="group date">
                                 <span>Fecha:</span>
-                                <input type="text" placeholder="D">/<input type="text" placeholder="M">/<input type="text" placeholder="A">
+                                <input type="date" name="fecha" >
                             </div>
                             <div class="group hour">
                                 <span>Hora:</span>
-                                <input type="text" placeholder="00:00 am">a<input type="text" placeholder="00:00 am">
+                                <input type="text" name="hora_desde" placeholder="00:00 am">a<input name="hora_hasta" type="text" placeholder="00:00 am">
                             </div>
                             <div class="group place">
                                 <span>Lugar:</span>
-                                <input type="text">
+                                <input type="text" name="lugar">
                             </div>
                             <div class="group featuring">
                                 <span>Invitados:</span>
-                                <input type="text">
+                                <input type="text" name="invitados">
                             </div>
                             <p>Descripción e información adicional:</p>
-                            <textarea id="ckeditor"></textarea>
+                            <textarea id="ckeditor" name="descripcion"></textarea>
                             <div class="image">
                                 <span>Imagen destacada:</span>
-                                <input type="file" id="file" class="inputfile" />
+                                <input type="file" name="file"  id="file" class="inputfile" />
                                 <label for="file"><span>Agregar</span></label>
                                 <span><em>Tamaño recomendado: 1920 × 700px</em></span>
                             </div>
@@ -59,7 +60,8 @@
                         <div class="widget active">
                             <div class="title">Publicación</div>
                             <div class="content">
-                                <a href="#" class="btn"><span>Publicar</span></a>
+                            <input type="submit" class="btn" value="Publicar">
+                                <!-- <a href="#" class="btn"><span>Publicar</span></a> -->
                             </div>
                         </div>
                     </div>

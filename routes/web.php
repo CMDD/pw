@@ -38,6 +38,7 @@ Route::get('articulo/show/{id}','Web\ArticuloController@show');
 Route::get('articulo/index/{id}','Web\ArticuloController@index');
 //Eventos
 Route::get('crear-evento',function(){ return view('admin.eventos.crear'); });
+Route::post('store-evento','Web\EventoController@store');
 
 //blog
 Route::get('blog',function(){
