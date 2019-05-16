@@ -36,6 +36,8 @@ Route::get('articulos/crear',function(){ return view('admin.articulos.crear'); }
 //Articulos web
 Route::get('articulo/show/{id}','Web\ArticuloController@show');
 Route::get('articulo/index/{id}','Web\ArticuloController@index');
+//Eventos
+Route::get('crear-evento',function(){ return view('admin.eventos.crear'); });
 
 //blog
 Route::get('blog',function(){

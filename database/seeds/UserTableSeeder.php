@@ -93,7 +93,7 @@ class UserTableSeeder extends Seeder
 
         $user = new User();
         $user->name = 'Santiago lopez';
-        $user->email = 'slopez@minutodedios.com.co';
+        $user->email = 'git ';
         $user->password = bcrypt('admin123');
         $user->emisora_id= 1;
         $user->save();
